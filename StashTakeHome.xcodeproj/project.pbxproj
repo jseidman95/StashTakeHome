@@ -15,6 +15,8 @@
 		E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */; };
 		E95AAB082427F577009E3E8A /* StashTakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */; };
 		E95AAB152427F646009E3E8A /* achievements.json in Resources */ = {isa = PBXBuildFile; fileRef = E95AAB142427F646009E3E8A /* achievements.json */; };
+		E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB172427F6AD009E3E8A /* Protocols.swift */; };
+		E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB1A2427F709009E3E8A /* Achievement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashTakeHomeUITests.swift; sourceTree = "<group>"; };
 		E95AAB092427F577009E3E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95AAB142427F646009E3E8A /* achievements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achievements.json; sourceTree = "<group>"; };
+		E95AAB172427F6AD009E3E8A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		E95AAB1A2427F709009E3E8A /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				E95AAAF22427F575009E3E8A /* SceneDelegate.swift */,
 				E95AAAF42427F575009E3E8A /* ViewController.swift */,
 				E95AAAF62427F575009E3E8A /* Main.storyboard */,
+				E95AAB162427F68E009E3E8A /* Achievements Module */,
 				E95AAB122427F62B009E3E8A /* Resources */,
 				E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */,
 				E95AAAFE2427F577009E3E8A /* Info.plist */,
@@ -116,6 +121,23 @@
 				E95AAB142427F646009E3E8A /* achievements.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		E95AAB162427F68E009E3E8A /* Achievements Module */ = {
+			isa = PBXGroup;
+			children = (
+				E95AAB192427F6FC009E3E8A /* Entities */,
+				E95AAB172427F6AD009E3E8A /* Protocols.swift */,
+			);
+			path = "Achievements Module";
+			sourceTree = "<group>";
+		};
+		E95AAB192427F6FC009E3E8A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E95AAB1A2427F709009E3E8A /* Achievement.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +245,8 @@
 				E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */,
 				E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */,
 				E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */,
+				E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */,
+				E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
