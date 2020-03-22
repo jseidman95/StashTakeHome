@@ -14,6 +14,7 @@
 		E95AAAFA2427F577009E3E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAF92427F576009E3E8A /* Assets.xcassets */; };
 		E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */; };
 		E95AAB082427F577009E3E8A /* StashTakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */; };
+		E95AAB152427F646009E3E8A /* achievements.json in Resources */ = {isa = PBXBuildFile; fileRef = E95AAB142427F646009E3E8A /* achievements.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E95AAB032427F577009E3E8A /* StashTakeHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashTakeHomeUITests.swift; sourceTree = "<group>"; };
 		E95AAB092427F577009E3E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E95AAB142427F646009E3E8A /* achievements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achievements.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,7 @@
 				E95AAAF22427F575009E3E8A /* SceneDelegate.swift */,
 				E95AAAF42427F575009E3E8A /* ViewController.swift */,
 				E95AAAF62427F575009E3E8A /* Main.storyboard */,
-				E95AAAF92427F576009E3E8A /* Assets.xcassets */,
+				E95AAB122427F62B009E3E8A /* Resources */,
 				E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */,
 				E95AAAFE2427F577009E3E8A /* Info.plist */,
 			);
@@ -97,6 +99,23 @@
 				E95AAB092427F577009E3E8A /* Info.plist */,
 			);
 			path = StashTakeHomeUITests;
+			sourceTree = "<group>";
+		};
+		E95AAB122427F62B009E3E8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E95AAB132427F638009E3E8A /* JSON */,
+				E95AAAF92427F576009E3E8A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E95AAB132427F638009E3E8A /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				E95AAB142427F646009E3E8A /* achievements.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */,
+				E95AAB152427F646009E3E8A /* achievements.json in Resources */,
 				E95AAAFA2427F577009E3E8A /* Assets.xcassets in Resources */,
 				E95AAAF82427F575009E3E8A /* Main.storyboard in Resources */,
 			);
