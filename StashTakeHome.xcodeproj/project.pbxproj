@@ -180,11 +180,8 @@
 		E90FA67F24284D8B00581093 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E90FA68024284DA100581093 /* ArrayExtension.swift */,
+				E9B6261524291F060061774B /* Extensions */,
 				E90FA6A02428F9AA00581093 /* Global Constants.swift */,
-				E90FA6A22428FA2E00581093 /* NumberExtensions.swift */,
-				E90FA68A2428647D00581093 /* UIColorExtension.swift */,
-				E90FA69C2428DDD700581093 /* UIFontExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -368,6 +365,17 @@
 				E9B6261324291C930061774B /* ProgressBarViewMock.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E9B6261524291F060061774B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA68024284DA100581093 /* ArrayExtension.swift */,
+				E90FA6A22428FA2E00581093 /* NumberExtensions.swift */,
+				E90FA68A2428647D00581093 /* UIColorExtension.swift */,
+				E90FA69C2428DDD700581093 /* UIFontExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E9E9274124280CD900989CB5 /* View */ = {
