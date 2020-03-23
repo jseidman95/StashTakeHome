@@ -1,0 +1,6 @@
+framework module Pods_StashTakeHome {
+  umbrella header "Pods-StashTakeHome-umbrella.h"
+
+  export *
+  module * { export * }
+}
