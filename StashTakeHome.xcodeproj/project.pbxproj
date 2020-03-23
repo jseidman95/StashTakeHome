@@ -12,7 +12,6 @@
 		E90FA67E2428424F00581093 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA67D2428424F00581093 /* ProgressBarView.swift */; };
 		E90FA68124284DA100581093 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68024284DA100581093 /* ArrayExtension.swift */; };
 		E90FA68424284EA100581093 /* AchievementsListViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */; };
-		E90FA68624284EC500581093 /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68524284EC500581093 /* Global Functions.swift */; };
 		E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6882428503F00581093 /* AchievementsListPresenter.swift */; };
 		E90FA68B2428647D00581093 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68A2428647D00581093 /* UIColorExtension.swift */; };
 		E90FA68F2428728800581093 /* AchievementsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68E2428728800581093 /* AchievementsListPresenterTests.swift */; };
@@ -23,6 +22,8 @@
 		E90FA69D2428DDD700581093 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA69C2428DDD700581093 /* UIFontExtension.swift */; };
 		E90FA6A12428F9AA00581093 /* Global Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6A02428F9AA00581093 /* Global Constants.swift */; };
 		E90FA6A32428FA2E00581093 /* NumberExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6A22428FA2E00581093 /* NumberExtensions.swift */; };
+		E90FA6B024290CAC00581093 /* AchievementsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6AF24290CAC00581093 /* AchievementsListViewControllerTests.swift */; };
+		E90FA6B224290CBB00581093 /* UICollectionViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6B124290CBB00581093 /* UICollectionViewMock.swift */; };
 		E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF02427F575009E3E8A /* AppDelegate.swift */; };
 		E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF22427F575009E3E8A /* SceneDelegate.swift */; };
 		E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF42427F575009E3E8A /* ViewController.swift */; };
@@ -36,6 +37,11 @@
 		E95AAB202427FF5A009E3E8A /* AchievementListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */; };
 		E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB2124280563009E3E8A /* AchievementListResponse.swift */; };
 		E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB2324280780009E3E8A /* HTTPStatus.swift */; };
+		E9B626092429140C0061774B /* AchievementsListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B626082429140C0061774B /* AchievementsListPresenterMock.swift */; };
+		E9B6260C242917B60061774B /* AchievementListCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260B242917B60061774B /* AchievementListCollectionViewCellMock.swift */; };
+		E9B6260E24291BB10061774B /* AchievementListCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */; };
+		E9B6261024291C130061774B /* UIImageViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260F24291C130061774B /* UIImageViewMock.swift */; };
+		E9B6261424291C930061774B /* ProgressBarViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261324291C930061774B /* ProgressBarViewMock.swift */; };
 		E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */; };
 		E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */; };
 		E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */; };
@@ -69,7 +75,6 @@
 		E90FA67D2428424F00581093 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		E90FA68024284DA100581093 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewRouter.swift; sourceTree = "<group>"; };
-		E90FA68524284EC500581093 /* Global Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
 		E90FA6882428503F00581093 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
 		E90FA68A2428647D00581093 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E90FA68E2428728800581093 /* AchievementsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterTests.swift; sourceTree = "<group>"; };
@@ -80,6 +85,8 @@
 		E90FA69C2428DDD700581093 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		E90FA6A02428F9AA00581093 /* Global Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Constants.swift"; sourceTree = "<group>"; };
 		E90FA6A22428FA2E00581093 /* NumberExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensions.swift; sourceTree = "<group>"; };
+		E90FA6AF24290CAC00581093 /* AchievementsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewControllerTests.swift; sourceTree = "<group>"; };
+		E90FA6B124290CBB00581093 /* UICollectionViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewMock.swift; sourceTree = "<group>"; };
 		E95AAAED2427F575009E3E8A /* StashTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAAF02427F575009E3E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95AAAF22427F575009E3E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +102,11 @@
 		E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListDataManager.swift; sourceTree = "<group>"; };
 		E95AAB2124280563009E3E8A /* AchievementListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListResponse.swift; sourceTree = "<group>"; };
 		E95AAB2324280780009E3E8A /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
+		E9B626082429140C0061774B /* AchievementsListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterMock.swift; sourceTree = "<group>"; };
+		E9B6260B242917B60061774B /* AchievementListCollectionViewCellMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCollectionViewCellMock.swift; sourceTree = "<group>"; };
+		E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		E9B6260F24291C130061774B /* UIImageViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewMock.swift; sourceTree = "<group>"; };
+		E9B6261324291C930061774B /* ProgressBarViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewMock.swift; sourceTree = "<group>"; };
 		E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
 		E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9274C24280D8500989CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +170,7 @@
 		E90FA67A2428386A00581093 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
+				E90FA6AE24290C9C00581093 /* View */,
 				E90FA68D2428727000581093 /* Presenter */,
 				E90FA68C2428726300581093 /* Interactor */,
 			);
@@ -168,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				E90FA68024284DA100581093 /* ArrayExtension.swift */,
-				E90FA68524284EC500581093 /* Global Functions.swift */,
 				E90FA6A02428F9AA00581093 /* Global Constants.swift */,
 				E90FA6A22428FA2E00581093 /* NumberExtensions.swift */,
 				E90FA68A2428647D00581093 /* UIColorExtension.swift */,
@@ -242,6 +254,15 @@
 				E90FA69A2428DDA000581093 /* Lato-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E90FA6AE24290C9C00581093 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA6AF24290CAC00581093 /* AchievementsListViewControllerTests.swift */,
+				E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E95AAAE42427F575009E3E8A = {
@@ -330,6 +351,25 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		E9B62607242913F70061774B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E9B626082429140C0061774B /* AchievementsListPresenterMock.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E9B6260A2429179A0061774B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA6B124290CBB00581093 /* UICollectionViewMock.swift */,
+				E9B6260B242917B60061774B /* AchievementListCollectionViewCellMock.swift */,
+				E9B6260F24291C130061774B /* UIImageViewMock.swift */,
+				E9B6261324291C930061774B /* ProgressBarViewMock.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E9E9274124280CD900989CB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */,
+				E9B6260A2429179A0061774B /* Views */,
 				E9EC47012428377D00CD6D44 /* Modules */,
 			);
 			path = Mocks;
@@ -388,6 +429,7 @@
 		E9EC47012428377D00CD6D44 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E9B62607242913F70061774B /* Presenter */,
 				E9EC47022428379300CD6D44 /* Achievements */,
 			);
 			path = Modules;
@@ -591,7 +633,6 @@
 				E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */,
 				E90FA6A12428F9AA00581093 /* Global Constants.swift in Sources */,
 				E90FA6A32428FA2E00581093 /* NumberExtensions.swift in Sources */,
-				E90FA68624284EC500581093 /* Global Functions.swift in Sources */,
 				E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */,
 				E95AAB1E2427FBA9009E3E8A /* AchievementListInteractor.swift in Sources */,
 				E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */,
@@ -603,13 +644,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B6260C242917B60061774B /* AchievementListCollectionViewCellMock.swift in Sources */,
 				E90FA6932428735A00581093 /* AchievementsListViewProtocolMock.swift in Sources */,
 				E90FA6952428741700581093 /* AchievementsListInteractorInputProtocolMock.swift in Sources */,
 				E90FA68F2428728800581093 /* AchievementsListPresenterTests.swift in Sources */,
+				E9B626092429140C0061774B /* AchievementsListPresenterMock.swift in Sources */,
 				E9EC46FA24282C0D00CD6D44 /* TestHelper.swift in Sources */,
+				E9B6261024291C130061774B /* UIImageViewMock.swift in Sources */,
+				E9B6260E24291BB10061774B /* AchievementListCollectionViewCellTests.swift in Sources */,
 				E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */,
+				E90FA6B024290CAC00581093 /* AchievementsListViewControllerTests.swift in Sources */,
 				E9EC46FC2428369900CD6D44 /* AchievementListInteractorTests.swift in Sources */,
+				E9B6261424291C930061774B /* ProgressBarViewMock.swift in Sources */,
 				E90FA6982428747D00581093 /* AchievementsListRouterProtocolMock.swift in Sources */,
+				E90FA6B224290CBB00581093 /* UICollectionViewMock.swift in Sources */,
 				E9EC46FE242836E200CD6D44 /* AchievementListDataManagerMock.swift in Sources */,
 				E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */,
 				E9EC47002428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift in Sources */,
