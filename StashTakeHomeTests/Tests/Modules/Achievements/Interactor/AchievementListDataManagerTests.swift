@@ -132,16 +132,7 @@ class AchievementListDataManagerTests: XCTestCase {
       case .success((let returnedTitle, let returnedAchievements)):
         resultSucceeded = true
         XCTAssertTrue(returnedTitle == title)
-        XCTAssertTrue(
-          returnedAchievements.elementsEqual(achievements) { (returnedAchievement, achievement) -> Bool in
-            returnedAchievement.id == achievement.id &&
-            returnedAchievement.level == achievement.level &&
-            returnedAchievement.progress == achievement.progress &&
-            returnedAchievement.total == achievement.total &&
-            returnedAchievement.imageURL.absoluteString == achievement.imageURL.absoluteString &&
-            returnedAchievement.unlocked == achievement.unlocked
-          }
-        )
+        XCTAssertTrue(returnedAchievements == achievements)
       }
 
       XCTAssertTrue(resultSucceeded)

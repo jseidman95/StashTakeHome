@@ -20,8 +20,9 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
 
   private let progressBarEdgePadding: CGFloat = 10
   private let pointsLabelsBottomPadding: CGFloat = 20
-  private let pointsLabelsFont: UIFont = .boldSystemFont(ofSize: 12)
+  private let pointsLabelsFont: UIFont = .latoRegular(ofSize: 13)
   private let pointsLabelsTextColor: UIColor = .white
+  private let adjustedIntertextDistanceLevelCircleLabel: CGFloat = 5
 
 
   // MARK: Public Methods
@@ -61,7 +62,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
 
     self.levelCircleView.layer.cornerRadius = self.levelCircleView.frame.height / 2
 
-    let cornerRadius = self.frame.height * 0.1
+    let cornerRadius = self.frame.height * 0.03
     self.contentView.layer.cornerRadius = cornerRadius
     self.contentView.layer.masksToBounds = true
 
@@ -81,7 +82,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     self.totalPointsLabel.text = "\(achievement.total)pts"
     self.backgroundImageView.sd_setImage(
       with: achievement.imageURL,
-      placeholderImage: nil
+      placeholderImage: UIImage(named: "placeholder_image")
     )
   }
 
@@ -89,11 +90,11 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
   private func setUpViews() {
     self.backgroundColor = .clear
     setUpBackgroundImageView()
-    setUpLevelCircleView()
-    setUpLevelCircleLabel()
     setUpCurrentPointsLabel()
     setUpTotalPointsLabel()
     setUpProgressBar()
+    setUpLevelCircleView()
+    setUpLevelCircleLabel()
   }
 
   private func setUpBackgroundImageView() {
@@ -105,33 +106,6 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
         self.backgroundImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
         self.backgroundImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         self.backgroundImageView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor)
-      ]
-    )
-  }
-
-  private func setUpLevelCircleView() {
-    levelCircleView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
-    levelCircleView.translatesAutoresizingMaskIntoConstraints = false
-    self.contentView.addSubview(levelCircleView)
-    NSLayoutConstraint.activate(
-      [
-        self.levelCircleView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-        self.levelCircleView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-        self.levelCircleView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
-        self.levelCircleView.heightAnchor.constraint(equalTo: self.levelCircleView.widthAnchor)
-      ]
-    )
-  }
-
-  private func setUpLevelCircleLabel() {
-    levelCircleLabel.textAlignment = .center
-    levelCircleLabel.numberOfLines = 2
-    levelCircleLabel.translatesAutoresizingMaskIntoConstraints = false
-    self.contentView.addSubview(levelCircleLabel)
-    NSLayoutConstraint.activate(
-      [
-        self.levelCircleLabel.centerYAnchor.constraint(equalTo: self.levelCircleView.centerYAnchor),
-        self.levelCircleLabel.centerXAnchor.constraint(equalTo: self.levelCircleView.centerXAnchor)
       ]
     )
   }
@@ -175,22 +149,56 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     )
   }
 
+  private func setUpLevelCircleView() {
+    levelCircleView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+    levelCircleView.translatesAutoresizingMaskIntoConstraints = false
+    self.contentView.addSubview(levelCircleView)
+    NSLayoutConstraint.activate(
+      [
+        self.levelCircleView.bottomAnchor.constraint(equalTo: self.progressBar.topAnchor, constant: -20),
+        self.levelCircleView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+        self.levelCircleView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
+        self.levelCircleView.heightAnchor.constraint(equalTo: self.levelCircleView.widthAnchor)
+      ]
+    )
+  }
+
+  private func setUpLevelCircleLabel() {
+    levelCircleLabel.textAlignment = .center
+    levelCircleLabel.numberOfLines = 2
+    levelCircleLabel.translatesAutoresizingMaskIntoConstraints = false
+    self.contentView.addSubview(levelCircleLabel)
+    NSLayoutConstraint.activate(
+      [
+        self.levelCircleLabel.centerYAnchor.constraint(equalTo: self.levelCircleView.centerYAnchor, constant: adjustedIntertextDistanceLevelCircleLabel),
+        self.levelCircleLabel.centerXAnchor.constraint(equalTo: self.levelCircleView.centerXAnchor)
+      ]
+    )
+  }
+
   private func setLevelCircleLabelText(withLevel level: String) {
     let fullAttributedString = NSMutableAttributedString(
       string: "Level\n",
       attributes: [
-        .font: UIFont.systemFont(ofSize: 13),
+        .font: UIFont.latoRegular(ofSize: 14),
         .foregroundColor: UIColor.black
       ]
     )
 
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.paragraphSpacingBefore = -adjustedIntertextDistanceLevelCircleLabel
+    paragraphStyle.alignment = .center
+
     let levelNumberAttributedString = NSAttributedString(
       string: level,
       attributes: [
-        .font: UIFont.boldSystemFont(ofSize: 40),
-        .foregroundColor: UIColor.black
+        .font: UIFont.helveticaBold(ofSize: 50),
+        .foregroundColor: UIColor.black,
+        .paragraphStyle: paragraphStyle
       ]
     )
+
+
 
     fullAttributedString.append(levelNumberAttributedString)
 

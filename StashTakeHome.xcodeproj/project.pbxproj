@@ -19,6 +19,8 @@
 		E90FA6932428735A00581093 /* AchievementsListViewProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6922428735A00581093 /* AchievementsListViewProtocolMock.swift */; };
 		E90FA6952428741700581093 /* AchievementsListInteractorInputProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6942428741700581093 /* AchievementsListInteractorInputProtocolMock.swift */; };
 		E90FA6982428747D00581093 /* AchievementsListRouterProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6972428747D00581093 /* AchievementsListRouterProtocolMock.swift */; };
+		E90FA69B2428DDC200581093 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E90FA69A2428DDA000581093 /* Lato-Regular.ttf */; };
+		E90FA69D2428DDD700581093 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA69C2428DDD700581093 /* UIFontExtension.swift */; };
 		E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF02427F575009E3E8A /* AppDelegate.swift */; };
 		E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF22427F575009E3E8A /* SceneDelegate.swift */; };
 		E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF42427F575009E3E8A /* ViewController.swift */; };
@@ -72,6 +74,8 @@
 		E90FA6922428735A00581093 /* AchievementsListViewProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewProtocolMock.swift; sourceTree = "<group>"; };
 		E90FA6942428741700581093 /* AchievementsListInteractorInputProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorInputProtocolMock.swift; sourceTree = "<group>"; };
 		E90FA6972428747D00581093 /* AchievementsListRouterProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRouterProtocolMock.swift; sourceTree = "<group>"; };
+		E90FA69A2428DDA000581093 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		E90FA69C2428DDD700581093 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		E95AAAED2427F575009E3E8A /* StashTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAAF02427F575009E3E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95AAAF22427F575009E3E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				E90FA68024284DA100581093 /* ArrayExtension.swift */,
 				E90FA68524284EC500581093 /* Global Functions.swift */,
 				E90FA68A2428647D00581093 /* UIColorExtension.swift */,
+				E90FA69C2428DDD700581093 /* UIFontExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -225,6 +230,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		E90FA6992428DD7A00581093 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA69A2428DDA000581093 /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E95AAAE42427F575009E3E8A = {
 			isa = PBXGroup;
 			children = (
@@ -264,8 +277,9 @@
 		E95AAB122427F62B009E3E8A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E95AAB132427F638009E3E8A /* JSON */,
 				E95AAAF92427F576009E3E8A /* Assets.xcassets */,
+				E90FA6992428DD7A00581093 /* Fonts */,
+				E95AAB132427F638009E3E8A /* JSON */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -470,6 +484,7 @@
 			files = (
 				E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */,
 				E95AAB152427F646009E3E8A /* achievements.json in Resources */,
+				E90FA69B2428DDC200581093 /* Lato-Regular.ttf in Resources */,
 				E95AAAFA2427F577009E3E8A /* Assets.xcassets in Resources */,
 				E95AAAF82427F575009E3E8A /* Main.storyboard in Resources */,
 			);
@@ -565,6 +580,7 @@
 				E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */,
 				E90FA67C2428418700581093 /* AchievementListCollectionViewCell.swift in Sources */,
 				E90FA68424284EA100581093 /* AchievementsListViewRouter.swift in Sources */,
+				E90FA69D2428DDD700581093 /* UIFontExtension.swift in Sources */,
 				E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */,
 				E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */,
 				E90FA68624284EC500581093 /* Global Functions.swift in Sources */,

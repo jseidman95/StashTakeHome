@@ -23,6 +23,10 @@ class AchievementsListPresenter: AchievementsListPresenterProtocol, Achievements
     self.router?.presentInfoScreen()
   }
 
+  func backButtonPressed() {
+    self.router?.dismissAchievementScreen()
+  }
+
 
   // MARK: AchievementsListInteractorOutputProtocol Methods
   func didFetch(achievementsListTitle: String, achievementsList: [Achievement]) {

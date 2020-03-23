@@ -23,6 +23,7 @@ class AchievementsListPresenterTests: XCTestCase {
 
     achievementsListPresenter.view = viewMock
     achievementsListPresenter.interactor = interactorMock
+    achievementsListPresenter.router = routerMock
   }
 
   func testPresentAchievementsTellsTheInteractorToFetch() {
@@ -30,12 +31,12 @@ class AchievementsListPresenterTests: XCTestCase {
     XCTAssertTrue(interactorMock.fetchAchievementsListCallCount == 1)
   }
 
-  func infoButtonPressedTellsTheRouterToPresentTheInfoScreen() {
+  func testInfoButtonPressedTellsTheRouterToPresentTheInfoScreen() {
     achievementsListPresenter.infoButtonPressed()
     XCTAssertTrue(routerMock.presentInfoScreenCallCount == 1)
   }
 
-  func didFetchAchievementListTellsTheViewToDisplayTitleAndShowList() {
+  func testDidFetchAchievementListTellsTheViewToDisplayTitleAndShowList() {
     let string = TestHelper.randomString()
     let achievements = (1...10).map { _ in TestHelper.createRandomAchievement() }
 
@@ -44,7 +45,7 @@ class AchievementsListPresenterTests: XCTestCase {
     XCTAssertTrue(viewMock.showAchievementsCalls.first == achievements)
   }
 
-  func didFailToFetchAchievementListTellsTheViewToShowTheNecessaryScreen() {
+  func testDidFailToFetchAchievementListTellsTheViewToShowTheNecessaryScreen() {
     achievementsListPresenter.didFailToFetchAchievementsList()
     XCTAssertTrue(viewMock.showNoAchievementsScreenCallCount == 1)
   }

@@ -11,9 +11,9 @@ import UIKit
 extension UIColor {
   static var stashNavigationBar: UIColor {
     return UIColor(
-      red: 97 / 255.0,
-      green: 63 / 255.0,
-      blue: 198 / 255.0,
+      red: 101 / 255.0,
+      green: 57 / 255.0,
+      blue: 171 / 255.0,
       alpha: 1.0
     )
   }

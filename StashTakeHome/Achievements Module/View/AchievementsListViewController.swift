@@ -21,6 +21,7 @@ class AchievementsListViewController: UIViewController,
   private var achievements: [Achievement] = []
   private let cellReuseID: String = "cellReuseID"
   private let infoButton: UIButton = .init(type: .infoLight)
+  private let backButton: UIButton = .init()
 
   // MARK: Public Methods
   init(
@@ -40,23 +41,23 @@ class AchievementsListViewController: UIViewController,
 
     self.presenter?.presentAchievements()
 
-    self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+
+    self.navigationController?.navigationBar.isTranslucent = false
     self.navigationController?.navigationBar.barTintColor = .stashNavigationBar
     self.navigationController?.navigationBar.titleTextAttributes = [
       .foregroundColor: UIColor.white,
-      .font: UIFont.systemFont(ofSize: 12)
+      .font: UIFont.latoRegular(ofSize: 12)
     ]
-
-    self.collectionView.contentInset = UIEdgeInsets(
-      top: (self.navigationController?.navigationBar.frame.height ?? 0) + (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0) + 15,
-      left: 0,
-      bottom: 15,
-      right: 0
-    )
   }
 
   @objc func infoButtonTapped() {
     self.presenter?.infoButtonPressed()
+  }
+
+  @objc func backButtonTapped() {
+    self.presenter?.backButtonPressed()
   }
 
   // MARK: Private Methods
@@ -64,9 +65,11 @@ class AchievementsListViewController: UIViewController,
     self.view.backgroundColor = .white
     setUpCollectionView()
     setUpInfoButton()
+    setUpBackButton()
   }
 
   private func setUpCollectionView() {
+    self.collectionView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
     collectionView.contentInsetAdjustmentBehavior = .never
     collectionView.backgroundColor = .clear
     collectionView.register(AchievementListCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseID)
@@ -87,7 +90,25 @@ class AchievementsListViewController: UIViewController,
   private func setUpInfoButton() {
     infoButton.tintColor = .white
     infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
-    infoButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+    infoButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+  }
+
+  private func setUpBackButton() {
+    let image = UIImage(named: "arrow_left")?.withRenderingMode(.alwaysTemplate)
+    backButton.tintColor = .white
+    backButton.setImage(image, for: .normal)
+    backButton.imageView?.contentMode = .scaleAspectFit
+    backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+  }
+
+  private func animate(cell: UICollectionViewCell, withTransform transform: CGAffineTransform, completion: @escaping () -> Void) {
+    UIView.animate(
+      withDuration: 0.2,
+      animations: {
+        cell.transform = transform
+      },
+      completion: { _ in completion() }
+    )
   }
 
   // MARK: UICollectionViewDelegate & UICollectionViewDataSource & UICollectionViewDelegateFlowLayout Methods
@@ -110,7 +131,7 @@ class AchievementsListViewController: UIViewController,
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 10
+    return 20
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -121,6 +142,24 @@ class AchievementsListViewController: UIViewController,
       width: width,
       height: height
     )
+  }
+
+  func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95), completion: {})
+  }
+
+  func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    self.animate(cell: cell, withTransform: CGAffineTransform.identity, completion: {})
+  }
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+
+    self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95)) {
+      self.animate(cell: cell, withTransform: .identity, completion: {})
+    }
   }
 
   // MARK: AchievementsListViewProtocol Methods

@@ -32,5 +32,12 @@ class AchievementsListViewRouter: AchievementsListRouterProtocol {
   }
 
   func presentInfoScreen() {
+    // There was no UI given for this screen but if there was, the wireframing and routing to
+    // that screen would go here
+  }
+
+  func dismissAchievementScreen() {
+    // We don't actually want to dismiss this screen because the previous screen is empty
+    // but this is where the routing would go to dismiss this screen
   }
 }
