@@ -44,6 +44,7 @@ class AchievementsListViewController: UIViewController,
 
     self.presenter?.presentAchievements()
 
+    // This only involves the UI of the Navigation Bar not routing, so its fine here
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
 
