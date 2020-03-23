@@ -15,7 +15,7 @@ class ProgressBarView: UIView {
 
   // MARK: Public Methods
   init(
-    fillColor: UIColor = UIColor(red: 135 / 255.0, green: 199 / 255.0, blue: 106 / 255.0, alpha: 1.0)
+    fillColor: UIColor = UIColor(red: 113 / 255.0, green: 202 / 255.0, blue: 92 / 255.0, alpha: 1.0)
   ) {
     self.fillColor = fillColor
     super.init(frame: .zero)

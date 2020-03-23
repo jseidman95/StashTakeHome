@@ -17,7 +17,7 @@ extension UIFont {
     return UIFont(name: "Lato-Bold", size: size) ?? UIFont()
   }
 
-  static func helveticaBold(ofSize size: CGFloat) -> UIFont {
-    return UIFont(name: "Helvetica-Bold", size: size) ?? UIFont()
+  static func helveticaNueueCondensedBlack(ofSize size: CGFloat) -> UIFont {
+    return UIFont(name: "HelveticaNeue-CondensedBlack", size: size) ?? UIFont()
   }
 }

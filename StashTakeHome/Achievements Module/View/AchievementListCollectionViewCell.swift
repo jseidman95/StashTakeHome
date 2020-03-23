@@ -98,6 +98,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
   }
 
   private func setUpBackgroundImageView() {
+    backgroundImageView.contentMode = .scaleAspectFill
     backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
     self.contentView.addSubview(backgroundImageView)
     NSLayoutConstraint.activate(
@@ -155,7 +156,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     self.contentView.addSubview(levelCircleView)
     NSLayoutConstraint.activate(
       [
-        self.levelCircleView.bottomAnchor.constraint(equalTo: self.progressBar.topAnchor, constant: -20.scaled()),
+        self.levelCircleView.bottomAnchor.constraint(equalTo: self.progressBar.topAnchor, constant: -15.scaled()),
         self.levelCircleView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
         self.levelCircleView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
         self.levelCircleView.heightAnchor.constraint(equalTo: self.levelCircleView.widthAnchor)
@@ -192,7 +193,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     let levelNumberAttributedString = NSAttributedString(
       string: level,
       attributes: [
-        .font: UIFont.helveticaBold(ofSize: 40.scaled()),
+        .font: UIFont.helveticaNueueCondensedBlack(ofSize: 45.scaled()),
         .foregroundColor: UIColor.black,
         .paragraphStyle: paragraphStyle
       ]
