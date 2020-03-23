@@ -145,17 +145,17 @@ class AchievementsListViewController: UIViewController,
   }
 
   func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
     self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95), completion: {})
   }
 
   func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
     self.animate(cell: cell, withTransform: CGAffineTransform.identity, completion: {})
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
 
     self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95)) {
       self.animate(cell: cell, withTransform: .identity, completion: {})
