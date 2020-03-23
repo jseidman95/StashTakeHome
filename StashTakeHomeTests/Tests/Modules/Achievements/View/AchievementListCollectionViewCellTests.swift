@@ -36,7 +36,7 @@ class AchievementListCollectionViewCellTests: XCTestCase {
   func testConfigureUpdatesTheUIWithTheAchievementData() {
     let achievement = TestHelper.createRandomAchievement()
     achievementListCollectionViewCell.configure(achievement: achievement)
-    XCTAssert(achievementListCollectionViewCell.contentView.alpha == (achievement.unlocked ? 1.0 : 0.4))
+    XCTAssert(achievementListCollectionViewCell.contentView.alpha.rounded() == (achievement.unlocked ? 1.0 : 0.4))
     XCTAssert(levelCircleLabel.attributedText?.string == "Level\n\(achievement.level)")
     XCTAssert(progressBarMock.setProgressCalls.first == achievement.progressRatio)
     XCTAssert(currentPointsLabel.text == "\(achievement.progress)pts")

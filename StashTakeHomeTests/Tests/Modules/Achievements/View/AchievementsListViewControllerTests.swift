@@ -14,14 +14,16 @@ class AchievementsListViewControllerTests: XCTestCase {
   var collectionViewMock: UICollectionViewMock!
   var presenterMock: AchievementsListPresenterMock!
   var noAchievementsFoundView: NoAchievementsFoundView!
+  var animatorMock: AnimatorMock!
 
   override func setUp() {
     super.setUp()
 
+    animatorMock = AnimatorMock()
     noAchievementsFoundView = NoAchievementsFoundView()
     presenterMock = AchievementsListPresenterMock()
     collectionViewMock = UICollectionViewMock()
-    achievementsListViewController = AchievementsListViewController(collectionView: collectionViewMock, noAchievementsFoundView: noAchievementsFoundView)
+    achievementsListViewController = AchievementsListViewController(collectionView: collectionViewMock, noAchievementsFoundView: noAchievementsFoundView, animator: animatorMock)
 
     achievementsListViewController.presenter = presenterMock
   }
@@ -102,5 +104,149 @@ class AchievementsListViewControllerTests: XCTestCase {
     achievementsListViewController.showNoAchievementsScreen()
     XCTAssert(collectionViewMock.isHidden == true)
     XCTAssert(noAchievementsFoundView.isHidden == false)
+  }
+//
+//  func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+//    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
+//    self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95), completion: {})
+//  }
+//
+//  func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+//    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
+//    self.animate(cell: cell, withTransform: CGAffineTransform.identity, completion: {})
+//  }
+
+  func testHighlightingItemPlaysAnimationIfItemIsUnlocked() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: true)
+    ]
+    let cell = UICollectionViewCell()
+    let indexPath = IndexPath(item: 0, section: 0)
+
+    collectionViewMock.cellForItemReturnValue = cell
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didHighlightItemAt: indexPath)
+
+    XCTAssert(animatorMock.animateCalls.first?.duration == 0.2)
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+  }
+
+  func testHighlightingItemDoesntPlayAnimationIfItemIsLocked() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: false)
+    ]
+    let cell = UICollectionViewCell()
+    let indexPath = IndexPath(item: 0, section: 0)
+
+    collectionViewMock.cellForItemReturnValue = cell
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didHighlightItemAt: indexPath)
+
+    XCTAssert(animatorMock.animateCalls.isEmpty == true)
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+  }
+
+  func testHighlightingItemDoesntPlayAnimationIfACellIsntReturned() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: false)
+    ]
+    let indexPath = IndexPath(item: 0, section: 0)
+
+    collectionViewMock.cellForItemReturnValue = nil
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didHighlightItemAt: indexPath)
+
+    XCTAssert(animatorMock.animateCalls.isEmpty == true)
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+  }
+
+  func testUnhighlightingItemPlaysAnimationIfItemIsUnlocked() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: true)
+    ]
+    let cell = UICollectionViewCell()
+    let indexPath = IndexPath(item: 0, section: 0)
+
+    collectionViewMock.cellForItemReturnValue = cell
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didUnhighlightItemAt: indexPath)
+
+    XCTAssert(animatorMock.animateCalls.first?.duration == 0.2)
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+  }
+
+  func testUnhighlightingItemDoesntPlayAnimationIfItemIsLocked() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: false)
+    ]
+    let cell = UICollectionViewCell()
+    let indexPath = IndexPath(item: 0, section: 0)
+
+    collectionViewMock.cellForItemReturnValue = cell
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didUnhighlightItemAt: indexPath)
+
+    XCTAssert(animatorMock.animateCalls.isEmpty == true)
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+  }
+
+  func testUnighlightingItemDoesntPlayAnimationIfACellIsntReturned() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: false)
+    ]
+    let indexPath = IndexPath(item: 0, section: 0)
+
+    collectionViewMock.cellForItemReturnValue = nil
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didUnhighlightItemAt: indexPath)
+
+    XCTAssert(animatorMock.animateCalls.isEmpty == true)
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+  }
+
+  func testSelectingCellTellsPresenterUnlockedAchievementWasSelected() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: true)
+    ]
+    let indexPath = IndexPath(item: 0, section: 0)
+    let cell = UICollectionViewCell()
+
+    collectionViewMock.cellForItemReturnValue = cell
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didSelectItemAt: indexPath)
+
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+    XCTAssert(animatorMock.animateCalls.count == 2)
+    XCTAssert(presenterMock.achievementCellPressedCalls.first == achievements[indexPath.item])
+  }
+
+  func testSelectingCellDoesNothingIfNoCellIsReturned() {
+    let upperBound = 5
+    let achievements = (1...upperBound).map { _ in TestHelper.createRandomAchievement() }
+    let randomIndexPath = IndexPath(item: Int.random(in: 0..<upperBound), section: 0)
+
+    collectionViewMock.cellForItemReturnValue = nil
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didSelectItemAt: randomIndexPath)
+
+    XCTAssert(collectionViewMock.cellForItemCalls.first == randomIndexPath)
+    XCTAssert(animatorMock.animateCalls.isEmpty == true)
+    XCTAssert(presenterMock.achievementCellPressedCalls.isEmpty == true)
+  }
+
+  func testSelectingCellDoesNothingIfAchievementIsLocked() {
+    let achievements = [
+      Achievement(id: 0, level: "", progress: 0, total: 0, imageURL: URL(fileURLWithPath: ""), unlocked: false)
+    ]
+    let indexPath = IndexPath(item: 0, section: 0)
+    let cell = UICollectionViewCell()
+
+    collectionViewMock.cellForItemReturnValue = cell
+    achievementsListViewController.show(achievements: achievements)
+    achievementsListViewController.collectionView(collectionViewMock, didSelectItemAt: indexPath)
+
+    XCTAssert(collectionViewMock.cellForItemCalls.first == indexPath)
+    XCTAssert(animatorMock.animateCalls.isEmpty == true)
+    XCTAssert(presenterMock.achievementCellPressedCalls.isEmpty == true)
   }
 }

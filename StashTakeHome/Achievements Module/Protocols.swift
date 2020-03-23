@@ -35,6 +35,7 @@ protocol AchievementsListPresenterProtocol: class {
   func presentAchievements()
   func infoButtonPressed()
   func backButtonPressed()
+  func achievementCellPressed(for achievement: Achievement)
 }
 
 protocol AchievementsListRouterProtocol: class {
@@ -43,6 +44,7 @@ protocol AchievementsListRouterProtocol: class {
   static func createAchievementListModule() -> UIViewController
   func presentInfoScreen()
   func dismissAchievementScreen()
+  func presentAchievementDetail(for achievement: Achievement)
 }
 
 

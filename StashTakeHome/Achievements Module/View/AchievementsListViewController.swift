@@ -23,12 +23,15 @@ class AchievementsListViewController: UIViewController,
   private let infoButton: UIButton = .init()
   private let backButton: UIButton = .init()
   private let noAchievementsFoundView: NoAchievementsFoundView
+  private let animator: Animator
 
   // MARK: Public Methods
   init(
     collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()),
-    noAchievementsFoundView: NoAchievementsFoundView = .init()
+    noAchievementsFoundView: NoAchievementsFoundView = .init(),
+    animator: Animator = .init()
   ) {
+    self.animator = animator
     self.noAchievementsFoundView = noAchievementsFoundView
     self.collectionView = collectionView
     super.init(nibName: nil, bundle: nil)
@@ -122,7 +125,7 @@ class AchievementsListViewController: UIViewController,
   }
 
   private func animate(cell: UICollectionViewCell, withTransform transform: CGAffineTransform, completion: @escaping () -> Void) {
-    UIView.animate(
+    self.animator.animate(
       withDuration: 0.2,
       animations: {
         cell.transform = transform
@@ -175,10 +178,15 @@ class AchievementsListViewController: UIViewController,
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
+    guard
+      let cell = collectionView.cellForItem(at: indexPath),
+      let achievement = self.achievements[safe: indexPath.item],
+      achievement.unlocked else { return }
 
     self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95)) {
-      self.animate(cell: cell, withTransform: .identity, completion: {})
+      self.animate(cell: cell, withTransform: .identity) {
+        self.presenter?.achievementCellPressed(for: achievement)
+      }
     }
   }
 

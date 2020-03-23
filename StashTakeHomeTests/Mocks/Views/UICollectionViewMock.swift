@@ -13,6 +13,8 @@ class UICollectionViewMock: UICollectionView {
   var dequeueReusableCellReturnValue: UICollectionViewCell = UICollectionViewCell()
   var dequeueReusableCellCalls: [(identifier: String, indexPath: IndexPath)] = []
   var reloadDataCallCount = 0
+  var cellForItemCalls: [IndexPath] = []
+  var cellForItemReturnValue: UICollectionViewCell?
 
   // MARK: Public Methods
   init() {
@@ -31,5 +33,10 @@ class UICollectionViewMock: UICollectionView {
 
   override func reloadData() {
     reloadDataCallCount += 1
+  }
+
+  override func cellForItem(at indexPath: IndexPath) -> UICollectionViewCell? {
+    cellForItemCalls.append(indexPath)
+    return cellForItemReturnValue
   }
 }

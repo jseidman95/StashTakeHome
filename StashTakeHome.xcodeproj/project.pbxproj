@@ -44,6 +44,8 @@
 		E9B6261924292FDA0061774B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B6261824292FDA0061774B /* Lato-Bold.ttf */; };
 		E9B6261C2429353D0061774B /* LightStatusBarUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */; };
 		E9B6261E242972170061774B /* NoAchievementsFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261D242972170061774B /* NoAchievementsFoundView.swift */; };
+		E9B62620242978FA0061774B /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261F242978FA0061774B /* Animator.swift */; };
+		E9B62622242979BD0061774B /* AnimatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B62621242979BD0061774B /* AnimatorMock.swift */; };
 		E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */; };
 		E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */; };
 		E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */; };
@@ -111,6 +113,8 @@
 		E9B6261824292FDA0061774B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStatusBarUINavigationController.swift; sourceTree = "<group>"; };
 		E9B6261D242972170061774B /* NoAchievementsFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAchievementsFoundView.swift; sourceTree = "<group>"; };
+		E9B6261F242978FA0061774B /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		E9B62621242979BD0061774B /* AnimatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorMock.swift; sourceTree = "<group>"; };
 		E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
 		E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9274C24280D8500989CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				E9B6261524291F060061774B /* Extensions */,
 				E90FA6A02428F9AA00581093 /* Global Constants.swift */,
+				E9B6261F242978FA0061774B /* Animator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */,
 				E9B6260A2429179A0061774B /* Views */,
 				E9EC47012428377D00CD6D44 /* Modules */,
+				E9B62621242979BD0061774B /* AnimatorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				E90FA68424284EA100581093 /* AchievementsListViewRouter.swift in Sources */,
 				E90FA69D2428DDD700581093 /* UIFontExtension.swift in Sources */,
 				E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */,
+				E9B62620242978FA0061774B /* Animator.swift in Sources */,
 				E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */,
 				E90FA6A12428F9AA00581093 /* Global Constants.swift in Sources */,
 				E90FA6A32428FA2E00581093 /* NumberExtensions.swift in Sources */,
@@ -680,6 +687,7 @@
 				E90FA6B024290CAC00581093 /* AchievementsListViewControllerTests.swift in Sources */,
 				E9EC46FC2428369900CD6D44 /* AchievementListInteractorTests.swift in Sources */,
 				E9B6261424291C930061774B /* ProgressBarViewMock.swift in Sources */,
+				E9B62622242979BD0061774B /* AnimatorMock.swift in Sources */,
 				E90FA6982428747D00581093 /* AchievementsListRouterProtocolMock.swift in Sources */,
 				E90FA6B224290CBB00581093 /* UICollectionViewMock.swift in Sources */,
 				E9EC46FE242836E200CD6D44 /* AchievementListDataManagerMock.swift in Sources */,

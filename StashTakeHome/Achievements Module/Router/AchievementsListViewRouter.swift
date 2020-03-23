@@ -40,4 +40,8 @@ class AchievementsListViewRouter: AchievementsListRouterProtocol {
     // We don't actually want to dismiss this screen because the previous screen is empty
     // but this is where the routing would go to dismiss this screen
   }
+
+  func presentAchievementDetail(for achievement: Achievement) {
+    // No UI for this either but if there was the router would present the achievement detail
+  }
 }

@@ -16,6 +16,7 @@ class AchievementsListRouterProtocolMock: AchievementsListRouterProtocol {
   // MARK: Public Properties
   var presentInfoScreenCallCount = 0
   var dismissAchievementScreenCallCount = 0
+  var presentAchievementDetailCalls: [Achievement] = []
 
   // MARK: AchievementsListRouterProtocol Methods
   func presentInfoScreen() {
@@ -28,5 +29,9 @@ class AchievementsListRouterProtocolMock: AchievementsListRouterProtocol {
 
   func dismissAchievementScreen() {
     dismissAchievementScreenCallCount += 1
+  }
+
+  func presentAchievementDetail(for achievement: Achievement) {
+    presentAchievementDetailCalls.append(achievement)
   }
 }

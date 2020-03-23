@@ -27,6 +27,10 @@ class AchievementsListPresenter: AchievementsListPresenterProtocol, Achievements
     self.router?.dismissAchievementScreen()
   }
 
+  func achievementCellPressed(for achievement: Achievement) {
+    self.router?.presentAchievementDetail(for: achievement)
+  }
+
 
   // MARK: AchievementsListInteractorOutputProtocol Methods
   func didFetch(achievementsListTitle: String, achievementsList: [Achievement]) {

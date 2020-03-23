@@ -49,4 +49,13 @@ class AchievementsListPresenterTests: XCTestCase {
     achievementsListPresenter.didFailToFetchAchievementsList()
     XCTAssertTrue(viewMock.showNoAchievementsScreenCallCount == 1)
   }
+
+  func testAchievementCellPressedCallsTheRouterToPresentTheDetailScreen() {
+    let achievement = TestHelper.createRandomAchievement()
+
+    achievementsListPresenter.achievementCellPressed(for: achievement)
+
+    XCTAssert(routerMock.presentAchievementDetailCalls.first == achievement)
+
+  }
 }

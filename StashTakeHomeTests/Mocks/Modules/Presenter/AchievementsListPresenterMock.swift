@@ -14,6 +14,7 @@ class AchievementsListPresenterMock: AchievementsListPresenter {
   var presentAchievementsCallCount = 0
   var infoButtonPressedCallCount = 0
   var backButtonPressedCallCount = 0
+  var achievementCellPressedCalls: [Achievement] = []
 
   // MARK: Public Methods
   override func presentAchievements() {
@@ -26,5 +27,9 @@ class AchievementsListPresenterMock: AchievementsListPresenter {
 
   override func backButtonPressed() {
     backButtonPressedCallCount += 1
+  }
+
+  override func achievementCellPressed(for achievement: Achievement) {
+    achievementCellPressedCalls.append(achievement)
   }
 }
