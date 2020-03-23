@@ -80,6 +80,10 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     self.progressBar.setProgress(achievement.progressRatio)
     self.currentPointsLabel.text = "\(achievement.progress)pts"
     self.totalPointsLabel.text = "\(achievement.total)pts"
+
+    // I use SDWebImage for async image loading and caching,
+    // could have implemented it myself but I figured that was out of the scope of this
+    // project
     self.backgroundImageView.sd_setImage(
       with: achievement.imageURL,
       placeholderImage: UIImage(named: "placeholder_image")
