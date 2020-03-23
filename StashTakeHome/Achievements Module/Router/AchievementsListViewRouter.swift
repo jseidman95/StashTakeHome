@@ -24,7 +24,9 @@ class AchievementsListViewRouter: AchievementsListRouterProtocol {
     interactor.presenter = presenter
     viewController.presenter = presenter
 
-    let navController = UINavigationController(rootViewController: viewController)
+    let rootViewController = UIViewController()
+    let navController = UINavigationController(rootViewController: rootViewController)
+    navController.pushViewController(viewController, animated: false)
 
     return navController
   }

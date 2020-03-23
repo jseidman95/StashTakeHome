@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AchievementListCollectionViewCell: UICollectionViewCell {
   // MARK: Private Properties
@@ -57,22 +58,31 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    self.levelCircleView.layer.cornerRadius = self.frame.height / 2
 
-    self.layer.cornerRadius = self.frame.height * 0.1
-    self.layer.backgroundColor = UIColor.clear.cgColor
+    self.levelCircleView.layer.cornerRadius = self.levelCircleView.frame.height / 2
+
+    let cornerRadius = self.frame.height * 0.1
+    self.contentView.layer.cornerRadius = cornerRadius
+    self.contentView.layer.masksToBounds = true
+
     self.layer.shadowColor = UIColor.black.cgColor
     self.layer.shadowOffset = .zero
     self.layer.shadowRadius = 10
     self.layer.shadowOpacity = 0.3
     self.layer.masksToBounds = false
+    self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
   }
 
   func configure(achievement: Achievement) {
+    self.contentView.alpha = achievement.unlocked ? 1.0 : 0.4
     self.setLevelCircleLabelText(withLevel: achievement.level)
     self.progressBar.setProgress(achievement.progressRatio)
     self.currentPointsLabel.text = "\(achievement.progress)pts"
     self.totalPointsLabel.text = "\(achievement.total)pts"
+    self.backgroundImageView.sd_setImage(
+      with: achievement.imageURL,
+      placeholderImage: nil
+    )
   }
 
   // MARK: Private Methods
@@ -88,37 +98,40 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
 
   private func setUpBackgroundImageView() {
     backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(backgroundImageView)
+    self.contentView.addSubview(backgroundImageView)
     NSLayoutConstraint.activate(
       [
-        self.backgroundImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
-        self.backgroundImageView.topAnchor.constraint(equalTo: self.topAnchor),
-        self.backgroundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-        self.backgroundImageView.rightAnchor.constraint(equalTo: self.rightAnchor)
+        self.backgroundImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
+        self.backgroundImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+        self.backgroundImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+        self.backgroundImageView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor)
       ]
     )
   }
 
   private func setUpLevelCircleView() {
+    levelCircleView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
     levelCircleView.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(levelCircleView)
+    self.contentView.addSubview(levelCircleView)
     NSLayoutConstraint.activate(
       [
-        self.levelCircleView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-        self.levelCircleView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-        self.levelCircleView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
-        self.levelCircleView.widthAnchor.constraint(equalTo: self.levelCircleView.heightAnchor)
+        self.levelCircleView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
+        self.levelCircleView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+        self.levelCircleView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
+        self.levelCircleView.heightAnchor.constraint(equalTo: self.levelCircleView.widthAnchor)
       ]
     )
   }
 
   private func setUpLevelCircleLabel() {
+    levelCircleLabel.textAlignment = .center
+    levelCircleLabel.numberOfLines = 2
     levelCircleLabel.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(levelCircleLabel)
+    self.contentView.addSubview(levelCircleLabel)
     NSLayoutConstraint.activate(
       [
-        self.levelCircleView.centerYAnchor.constraint(equalTo: self.levelCircleView.centerYAnchor),
-        self.levelCircleView.centerXAnchor.constraint(equalTo: self.levelCircleView.centerXAnchor)
+        self.levelCircleLabel.centerYAnchor.constraint(equalTo: self.levelCircleView.centerYAnchor),
+        self.levelCircleLabel.centerXAnchor.constraint(equalTo: self.levelCircleView.centerXAnchor)
       ]
     )
   }
@@ -127,11 +140,11 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     currentPointsLabel.textColor = pointsLabelsTextColor
     currentPointsLabel.font = pointsLabelsFont
     currentPointsLabel.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(currentPointsLabel)
+    self.contentView.addSubview(currentPointsLabel)
     NSLayoutConstraint.activate(
       [
-        self.currentPointsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: progressBarEdgePadding),
-        self.currentPointsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -pointsLabelsBottomPadding),
+        self.currentPointsLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: progressBarEdgePadding),
+        self.currentPointsLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -pointsLabelsBottomPadding),
       ]
     )
   }
@@ -140,22 +153,22 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     totalPointsLabel.textColor = pointsLabelsTextColor
     totalPointsLabel.font = pointsLabelsFont
     totalPointsLabel.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(totalPointsLabel)
+    self.contentView.addSubview(totalPointsLabel)
     NSLayoutConstraint.activate(
       [
-        self.totalPointsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -progressBarEdgePadding),
-        self.totalPointsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -pointsLabelsBottomPadding),
+        self.totalPointsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -progressBarEdgePadding),
+        self.totalPointsLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -pointsLabelsBottomPadding),
       ]
     )
   }
 
   private func setUpProgressBar() {
     progressBar.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(progressBar)
+    self.contentView.addSubview(progressBar)
     NSLayoutConstraint.activate(
       [
         self.progressBar.leadingAnchor.constraint(equalTo: self.currentPointsLabel.leadingAnchor),
-        self.progressBar.trailingAnchor.constraint(equalTo: self.currentPointsLabel.trailingAnchor),
+        self.progressBar.trailingAnchor.constraint(equalTo: self.totalPointsLabel.trailingAnchor),
         self.progressBar.heightAnchor.constraint(equalToConstant: 10),
         self.progressBar.bottomAnchor.constraint(equalTo: currentPointsLabel.topAnchor, constant: -10)
       ]
@@ -174,7 +187,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     let levelNumberAttributedString = NSAttributedString(
       string: level,
       attributes: [
-        .font: UIFont.boldSystemFont(ofSize: 17),
+        .font: UIFont.boldSystemFont(ofSize: 40),
         .foregroundColor: UIColor.black
       ]
     )

@@ -41,13 +41,16 @@ class ProgressBarView: UIView {
       self.removeConstraint(widthConstraint)
     }
 
-    self.widthConstraint = self.progressBarFillView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: progressRatio)
-    self.widthConstraint?.isActive = true
+    let newWidthConstraint = self.progressBarFillView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: progressRatio)
+    NSLayoutConstraint.activate([newWidthConstraint])
+
+    self.widthConstraint = newWidthConstraint
     self.layoutIfNeeded()
   }
 
   // MARK: Private Methods
   private func setUpViews() {
+    self.backgroundColor = .white
     setUpProgressBarFillView()
   }
 
@@ -55,15 +58,16 @@ class ProgressBarView: UIView {
     progressBarFillView.translatesAutoresizingMaskIntoConstraints = false
     progressBarFillView.backgroundColor = fillColor
     self.addSubview(progressBarFillView)
+    let widthConstraint = self.progressBarFillView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0)
     NSLayoutConstraint.activate(
       [
         self.progressBarFillView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
         self.progressBarFillView.topAnchor.constraint(equalTo: self.topAnchor),
-        self.progressBarFillView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        self.progressBarFillView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        widthConstraint
       ]
     )
 
-    self.widthConstraint = self.progressBarFillView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0)
-    self.widthConstraint?.isActive = true
+    self.widthConstraint = widthConstraint
   }
 }

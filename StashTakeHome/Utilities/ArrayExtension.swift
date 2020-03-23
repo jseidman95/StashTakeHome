@@ -10,7 +10,7 @@ import UIKit
 
 extension Array {
   subscript(safe index: Index) -> Element? {
-    guard index > startIndex && index < endIndex else { return nil }
+    if index < startIndex || index > endIndex { return nil }
 
     return self[index]
   }

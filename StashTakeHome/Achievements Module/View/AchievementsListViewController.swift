@@ -38,6 +38,22 @@ class AchievementsListViewController: UIViewController,
     super.viewWillAppear(animated)
 
     self.presenter?.presentAchievements()
+
+    self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
+    self.navigationController?.navigationBar.barTintColor = .purple
+    self.navigationController?.navigationBar.titleTextAttributes = [
+      .foregroundColor: UIColor.white,
+      .font: UIFont.systemFont(ofSize: 12)
+    ]
+
+
+    self.collectionView.contentInset = UIEdgeInsets(
+      top: (self.navigationController?.navigationBar.frame.height ?? 0) + (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0) + 15,
+      left: 0,
+      bottom: 15,
+      right: 0
+    )
   }
 
   // MARK: Private Methods
@@ -47,6 +63,7 @@ class AchievementsListViewController: UIViewController,
   }
 
   private func setUpCollectionView() {
+    collectionView.contentInsetAdjustmentBehavior = .never
     collectionView.backgroundColor = .clear
     collectionView.register(AchievementListCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseID)
     collectionView.delegate = self
