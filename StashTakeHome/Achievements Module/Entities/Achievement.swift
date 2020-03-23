@@ -17,6 +17,10 @@ struct Achievement: Equatable {
   let total: Points
   let imageURL: URL
   let unlocked: Bool
+
+  var progressRatio: CGFloat {
+    return CGFloat(progress) / CGFloat(total)
+  }
 }
 
 extension Achievement: Decodable {

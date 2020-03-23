@@ -11,6 +11,7 @@ import UIKit
 protocol AchievementsListViewProtocol: class {
   var presenter: AchievementsListPresenterProtocol? { get set }
 
+  func display(title: String)
   func show(achievements: [Achievement])
   func showNoAchievementsScreen()
 }
@@ -38,7 +39,7 @@ protocol AchievementsListPresenterProtocol: class {
 protocol AchievementsListRouterProtocol: class {
   var presenter: AchievementsListPresenterProtocol? { get set }
 
-  func createAchievementListModule(completion: (AchievementsListViewController) -> Void)
+  static func createAchievementListModule() -> UIViewController
   func presentInfoScreen()
 }
 

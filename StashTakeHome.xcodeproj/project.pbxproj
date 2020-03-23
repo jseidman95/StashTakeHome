@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90FA67C2428418700581093 /* AchievementListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA67B2428418700581093 /* AchievementListCollectionViewCell.swift */; };
+		E90FA67E2428424F00581093 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA67D2428424F00581093 /* ProgressBarView.swift */; };
+		E90FA68124284DA100581093 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68024284DA100581093 /* ArrayExtension.swift */; };
+		E90FA68424284EA100581093 /* AchievementsListViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */; };
+		E90FA68624284EC500581093 /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68524284EC500581093 /* Global Functions.swift */; };
+		E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6882428503F00581093 /* AchievementsListPresenter.swift */; };
 		E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF02427F575009E3E8A /* AppDelegate.swift */; };
 		E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF22427F575009E3E8A /* SceneDelegate.swift */; };
 		E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF42427F575009E3E8A /* ViewController.swift */; };
@@ -42,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E90FA67B2428418700581093 /* AchievementListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCollectionViewCell.swift; sourceTree = "<group>"; };
+		E90FA67D2428424F00581093 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		E90FA68024284DA100581093 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewRouter.swift; sourceTree = "<group>"; };
+		E90FA68524284EC500581093 /* Global Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
+		E90FA6882428503F00581093 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
 		E95AAAED2427F575009E3E8A /* StashTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAAF02427F575009E3E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95AAAF22427F575009E3E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +116,31 @@
 			path = Achievements;
 			sourceTree = "<group>";
 		};
+		E90FA67F24284D8B00581093 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA68024284DA100581093 /* ArrayExtension.swift */,
+				E90FA68524284EC500581093 /* Global Functions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E90FA68224284E9200581093 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E90FA6872428502800581093 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA6882428503F00581093 /* AchievementsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		E95AAAE42427F575009E3E8A = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +166,7 @@
 				E95AAAF22427F575009E3E8A /* SceneDelegate.swift */,
 				E95AAAF42427F575009E3E8A /* ViewController.swift */,
 				E95AAAF62427F575009E3E8A /* Main.storyboard */,
+				E90FA67F24284D8B00581093 /* Utilities */,
 				E95AAB162427F68E009E3E8A /* Achievements Module */,
 				E95AAB122427F62B009E3E8A /* Resources */,
 				E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */,
@@ -157,10 +195,12 @@
 		E95AAB162427F68E009E3E8A /* Achievements Module */ = {
 			isa = PBXGroup;
 			children = (
-				E95AAB192427F6FC009E3E8A /* Entities */,
-				E9E9274124280CD900989CB5 /* View */,
-				E95AAB1C2427FB8E009E3E8A /* Interactor */,
 				E95AAB172427F6AD009E3E8A /* Protocols.swift */,
+				E9E9274124280CD900989CB5 /* View */,
+				E90FA6872428502800581093 /* Presenter */,
+				E95AAB1C2427FB8E009E3E8A /* Interactor */,
+				E95AAB192427F6FC009E3E8A /* Entities */,
+				E90FA68224284E9200581093 /* Router */,
 			);
 			path = "Achievements Module";
 			sourceTree = "<group>";
@@ -188,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */,
+				E90FA67B2428418700581093 /* AchievementListCollectionViewCell.swift */,
+				E90FA67D2428424F00581093 /* ProgressBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,15 +402,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */,
+				E90FA67E2428424F00581093 /* ProgressBarView.swift in Sources */,
 				E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */,
 				E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */,
 				E95AAB202427FF5A009E3E8A /* AchievementListDataManager.swift in Sources */,
 				E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */,
 				E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */,
+				E90FA67C2428418700581093 /* AchievementListCollectionViewCell.swift in Sources */,
+				E90FA68424284EA100581093 /* AchievementsListViewRouter.swift in Sources */,
 				E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */,
+				E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */,
+				E90FA68624284EC500581093 /* Global Functions.swift in Sources */,
 				E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */,
 				E95AAB1E2427FBA9009E3E8A /* AchievementListInteractor.swift in Sources */,
 				E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */,
+				E90FA68124284DA100581093 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
