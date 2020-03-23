@@ -25,7 +25,7 @@ class AchievementsListViewRouter: AchievementsListRouterProtocol {
     viewController.presenter = presenter
 
     let rootViewController = UIViewController()
-    let navController = UINavigationController(rootViewController: rootViewController)
+    let navController = LightStatusBarUINavigationController(rootViewController: rootViewController)
     navController.pushViewController(viewController, animated: false)
 
     return navController

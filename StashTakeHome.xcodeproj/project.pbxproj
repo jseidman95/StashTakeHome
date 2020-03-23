@@ -26,7 +26,6 @@
 		E90FA6B224290CBB00581093 /* UICollectionViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6B124290CBB00581093 /* UICollectionViewMock.swift */; };
 		E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF02427F575009E3E8A /* AppDelegate.swift */; };
 		E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF22427F575009E3E8A /* SceneDelegate.swift */; };
-		E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF42427F575009E3E8A /* ViewController.swift */; };
 		E95AAAF82427F575009E3E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAF62427F575009E3E8A /* Main.storyboard */; };
 		E95AAAFA2427F577009E3E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAF92427F576009E3E8A /* Assets.xcassets */; };
 		E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */; };
@@ -43,6 +42,7 @@
 		E9B6261024291C130061774B /* UIImageViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260F24291C130061774B /* UIImageViewMock.swift */; };
 		E9B6261424291C930061774B /* ProgressBarViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261324291C930061774B /* ProgressBarViewMock.swift */; };
 		E9B6261924292FDA0061774B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B6261824292FDA0061774B /* Lato-Bold.ttf */; };
+		E9B6261C2429353D0061774B /* LightStatusBarUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */; };
 		E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */; };
 		E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */; };
 		E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */; };
@@ -91,7 +91,6 @@
 		E95AAAED2427F575009E3E8A /* StashTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAAF02427F575009E3E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95AAAF22427F575009E3E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E95AAAF42427F575009E3E8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E95AAAF72427F575009E3E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E95AAAF92427F576009E3E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E95AAAFC2427F577009E3E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		E9B6260F24291C130061774B /* UIImageViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewMock.swift; sourceTree = "<group>"; };
 		E9B6261324291C930061774B /* ProgressBarViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewMock.swift; sourceTree = "<group>"; };
 		E9B6261824292FDA0061774B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStatusBarUINavigationController.swift; sourceTree = "<group>"; };
 		E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
 		E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9274C24280D8500989CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,8 +290,8 @@
 			children = (
 				E95AAAF02427F575009E3E8A /* AppDelegate.swift */,
 				E95AAAF22427F575009E3E8A /* SceneDelegate.swift */,
-				E95AAAF42427F575009E3E8A /* ViewController.swift */,
 				E95AAAF62427F575009E3E8A /* Main.storyboard */,
+				E9B6261A242935160061774B /* Subclasses */,
 				E90FA67F24284D8B00581093 /* Utilities */,
 				E95AAB162427F68E009E3E8A /* Achievements Module */,
 				E95AAB122427F62B009E3E8A /* Resources */,
@@ -379,6 +379,14 @@
 				E90FA69C2428DDD700581093 /* UIFontExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9B6261A242935160061774B /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */,
+			);
+			path = Subclasses;
 			sourceTree = "<group>";
 		};
 		E9E9274124280CD900989CB5 /* View */ = {
@@ -631,7 +639,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90FA68B2428647D00581093 /* UIColorExtension.swift in Sources */,
-				E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */,
 				E90FA67E2428424F00581093 /* ProgressBarView.swift in Sources */,
 				E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */,
 				E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */,
@@ -646,6 +653,7 @@
 				E90FA6A12428F9AA00581093 /* Global Constants.swift in Sources */,
 				E90FA6A32428FA2E00581093 /* NumberExtensions.swift in Sources */,
 				E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */,
+				E9B6261C2429353D0061774B /* LightStatusBarUINavigationController.swift in Sources */,
 				E95AAB1E2427FBA9009E3E8A /* AchievementListInteractor.swift in Sources */,
 				E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */,
 				E90FA68124284DA100581093 /* ArrayExtension.swift in Sources */,
