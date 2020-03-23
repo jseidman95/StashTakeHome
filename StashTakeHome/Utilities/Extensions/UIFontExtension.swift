@@ -13,6 +13,10 @@ extension UIFont {
     return UIFont(name: "Lato-Regular", size: size) ?? UIFont()
   }
 
+  static func latoBold(ofSize size: CGFloat) -> UIFont {
+    return UIFont(name: "Lato-Bold", size: size) ?? UIFont()
+  }
+
   static func helveticaBold(ofSize size: CGFloat) -> UIFont {
     return UIFont(name: "Helvetica-Bold", size: size) ?? UIFont()
   }

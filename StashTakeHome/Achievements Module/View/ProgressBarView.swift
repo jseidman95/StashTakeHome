@@ -38,6 +38,7 @@ class ProgressBarView: UIView {
 
   func setProgress(_ progressRatio: CGFloat) {
     if let widthConstraint = widthConstraint {
+      NSLayoutConstraint.deactivate([widthConstraint])
       self.removeConstraint(widthConstraint)
     }
 

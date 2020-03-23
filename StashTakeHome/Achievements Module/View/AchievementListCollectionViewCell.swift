@@ -20,7 +20,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
 
   private let progressBarEdgePadding: CGFloat = 10.scaled()
   private let pointsLabelsBottomPadding: CGFloat = 20.scaled()
-  private let pointsLabelsFont: UIFont = .latoRegular(ofSize: 13.scaled())
+  private let pointsLabelsFont: UIFont = .latoBold(ofSize: 14.scaled())
   private let pointsLabelsTextColor: UIColor = .white
   private let adjustedIntertextDistanceLevelCircleLabel: CGFloat = 5.scaled()
 
@@ -143,7 +143,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
       [
         self.progressBar.leadingAnchor.constraint(equalTo: self.currentPointsLabel.leadingAnchor),
         self.progressBar.trailingAnchor.constraint(equalTo: self.totalPointsLabel.trailingAnchor),
-        self.progressBar.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.04),
+        self.progressBar.heightAnchor.constraint(equalToConstant: 8.scaled()),
         self.progressBar.bottomAnchor.constraint(equalTo: currentPointsLabel.topAnchor, constant: -10.scaled())
       ]
     )

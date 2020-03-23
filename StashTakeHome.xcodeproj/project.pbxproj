@@ -42,6 +42,7 @@
 		E9B6260E24291BB10061774B /* AchievementListCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */; };
 		E9B6261024291C130061774B /* UIImageViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260F24291C130061774B /* UIImageViewMock.swift */; };
 		E9B6261424291C930061774B /* ProgressBarViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261324291C930061774B /* ProgressBarViewMock.swift */; };
+		E9B6261924292FDA0061774B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B6261824292FDA0061774B /* Lato-Bold.ttf */; };
 		E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */; };
 		E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */; };
 		E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */; };
@@ -107,6 +108,7 @@
 		E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		E9B6260F24291C130061774B /* UIImageViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewMock.swift; sourceTree = "<group>"; };
 		E9B6261324291C930061774B /* ProgressBarViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewMock.swift; sourceTree = "<group>"; };
+		E9B6261824292FDA0061774B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
 		E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9274C24280D8500989CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				E90FA69A2428DDA000581093 /* Lato-Regular.ttf */,
+				E9B6261824292FDA0061774B /* Lato-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */,
+				E9B6261924292FDA0061774B /* Lato-Bold.ttf in Resources */,
 				E95AAB152427F646009E3E8A /* achievements.json in Resources */,
 				E90FA69B2428DDC200581093 /* Lato-Regular.ttf in Resources */,
 				E95AAAFA2427F577009E3E8A /* Assets.xcassets in Resources */,
