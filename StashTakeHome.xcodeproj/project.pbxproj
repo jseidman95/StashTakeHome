@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		E90FA68424284EA100581093 /* AchievementsListViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */; };
 		E90FA68624284EC500581093 /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68524284EC500581093 /* Global Functions.swift */; };
 		E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6882428503F00581093 /* AchievementsListPresenter.swift */; };
+		E90FA68B2428647D00581093 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68A2428647D00581093 /* UIColorExtension.swift */; };
 		E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF02427F575009E3E8A /* AppDelegate.swift */; };
 		E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF22427F575009E3E8A /* SceneDelegate.swift */; };
 		E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF42427F575009E3E8A /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		E90FA68324284EA100581093 /* AchievementsListViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewRouter.swift; sourceTree = "<group>"; };
 		E90FA68524284EC500581093 /* Global Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
 		E90FA6882428503F00581093 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
+		E90FA68A2428647D00581093 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E95AAAED2427F575009E3E8A /* StashTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAAF02427F575009E3E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95AAAF22427F575009E3E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 				E8DB49B229ADF46A21B63D26 /* Pods-StashTakeHomeTests.debug.xcconfig */,
 				7375CD406BDF41102E7A7C2E /* Pods-StashTakeHomeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +153,7 @@
 			children = (
 				E90FA68024284DA100581093 /* ArrayExtension.swift */,
 				E90FA68524284EC500581093 /* Global Functions.swift */,
+				E90FA68A2428647D00581093 /* UIColorExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -501,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90FA68B2428647D00581093 /* UIColorExtension.swift in Sources */,
 				E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */,
 				E90FA67E2428424F00581093 /* ProgressBarView.swift in Sources */,
 				E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */,

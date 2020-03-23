@@ -20,6 +20,7 @@ class AchievementsListViewController: UIViewController,
   private let collectionView: UICollectionView
   private var achievements: [Achievement] = []
   private let cellReuseID: String = "cellReuseID"
+  private let infoButton: UIButton = .init(type: .infoLight)
 
   // MARK: Public Methods
   init(
@@ -40,13 +41,11 @@ class AchievementsListViewController: UIViewController,
     self.presenter?.presentAchievements()
 
     self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
-    self.navigationController?.navigationBar.barTintColor = .purple
+    self.navigationController?.navigationBar.barTintColor = .stashNavigationBar
     self.navigationController?.navigationBar.titleTextAttributes = [
       .foregroundColor: UIColor.white,
       .font: UIFont.systemFont(ofSize: 12)
     ]
-
 
     self.collectionView.contentInset = UIEdgeInsets(
       top: (self.navigationController?.navigationBar.frame.height ?? 0) + (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0) + 15,
@@ -56,10 +55,15 @@ class AchievementsListViewController: UIViewController,
     )
   }
 
+  @objc func infoButtonTapped() {
+    self.presenter?.infoButtonPressed()
+  }
+
   // MARK: Private Methods
   private func setUpViews() {
     self.view.backgroundColor = .white
     setUpCollectionView()
+    setUpInfoButton()
   }
 
   private func setUpCollectionView() {
@@ -78,6 +82,12 @@ class AchievementsListViewController: UIViewController,
         collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
       ]
     )
+  }
+
+  private func setUpInfoButton() {
+    infoButton.tintColor = .white
+    infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+    infoButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
   }
 
   // MARK: UICollectionViewDelegate & UICollectionViewDataSource & UICollectionViewDelegateFlowLayout Methods
@@ -104,9 +114,12 @@ class AchievementsListViewController: UIViewController,
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = collectionView.frame.width * 0.87
+    let height = width * 0.6
+
     return CGSize(
-      width: collectionView.frame.width * 0.9,
-      height: collectionView.frame.height / 3
+      width: width,
+      height: height
     )
   }
 

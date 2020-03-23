@@ -169,7 +169,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
       [
         self.progressBar.leadingAnchor.constraint(equalTo: self.currentPointsLabel.leadingAnchor),
         self.progressBar.trailingAnchor.constraint(equalTo: self.totalPointsLabel.trailingAnchor),
-        self.progressBar.heightAnchor.constraint(equalToConstant: 10),
+        self.progressBar.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.04),
         self.progressBar.bottomAnchor.constraint(equalTo: currentPointsLabel.topAnchor, constant: -10)
       ]
     )
