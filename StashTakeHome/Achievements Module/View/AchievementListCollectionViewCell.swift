@@ -18,11 +18,11 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
   private let currentPointsLabel: UILabel
   private let totalPointsLabel: UILabel
 
-  private let progressBarEdgePadding: CGFloat = 10
-  private let pointsLabelsBottomPadding: CGFloat = 20
-  private let pointsLabelsFont: UIFont = .latoRegular(ofSize: 13)
+  private let progressBarEdgePadding: CGFloat = 10.scaled()
+  private let pointsLabelsBottomPadding: CGFloat = 20.scaled()
+  private let pointsLabelsFont: UIFont = .latoRegular(ofSize: 13.scaled())
   private let pointsLabelsTextColor: UIColor = .white
-  private let adjustedIntertextDistanceLevelCircleLabel: CGFloat = 5
+  private let adjustedIntertextDistanceLevelCircleLabel: CGFloat = 5.scaled()
 
 
   // MARK: Public Methods
@@ -68,7 +68,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
 
     self.layer.shadowColor = UIColor.black.cgColor
     self.layer.shadowOffset = .zero
-    self.layer.shadowRadius = 10
+    self.layer.shadowRadius = 10.scaled()
     self.layer.shadowOpacity = 0.3
     self.layer.masksToBounds = false
     self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
@@ -144,7 +144,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
         self.progressBar.leadingAnchor.constraint(equalTo: self.currentPointsLabel.leadingAnchor),
         self.progressBar.trailingAnchor.constraint(equalTo: self.totalPointsLabel.trailingAnchor),
         self.progressBar.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.04),
-        self.progressBar.bottomAnchor.constraint(equalTo: currentPointsLabel.topAnchor, constant: -10)
+        self.progressBar.bottomAnchor.constraint(equalTo: currentPointsLabel.topAnchor, constant: -10.scaled())
       ]
     )
   }
@@ -155,7 +155,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     self.contentView.addSubview(levelCircleView)
     NSLayoutConstraint.activate(
       [
-        self.levelCircleView.bottomAnchor.constraint(equalTo: self.progressBar.topAnchor, constant: -20),
+        self.levelCircleView.bottomAnchor.constraint(equalTo: self.progressBar.topAnchor, constant: -20.scaled()),
         self.levelCircleView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
         self.levelCircleView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
         self.levelCircleView.heightAnchor.constraint(equalTo: self.levelCircleView.widthAnchor)
@@ -180,7 +180,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     let fullAttributedString = NSMutableAttributedString(
       string: "Level\n",
       attributes: [
-        .font: UIFont.latoRegular(ofSize: 14),
+        .font: UIFont.latoRegular(ofSize: 14.scaled()),
         .foregroundColor: UIColor.black
       ]
     )
@@ -192,7 +192,7 @@ class AchievementListCollectionViewCell: UICollectionViewCell {
     let levelNumberAttributedString = NSAttributedString(
       string: level,
       attributes: [
-        .font: UIFont.helveticaBold(ofSize: 50),
+        .font: UIFont.helveticaBold(ofSize: 40.scaled()),
         .foregroundColor: UIColor.black,
         .paragraphStyle: paragraphStyle
       ]

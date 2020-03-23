@@ -48,7 +48,7 @@ class AchievementsListViewController: UIViewController,
     self.navigationController?.navigationBar.barTintColor = .stashNavigationBar
     self.navigationController?.navigationBar.titleTextAttributes = [
       .foregroundColor: UIColor.white,
-      .font: UIFont.latoRegular(ofSize: 12)
+      .font: UIFont.latoRegular(ofSize: 12.scaled())
     ]
   }
 
@@ -69,7 +69,7 @@ class AchievementsListViewController: UIViewController,
   }
 
   private func setUpCollectionView() {
-    self.collectionView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
+    self.collectionView.contentInset = UIEdgeInsets(top: 15.scaled(), left: 0, bottom: 15.scaled(), right: 0)
     collectionView.contentInsetAdjustmentBehavior = .never
     collectionView.backgroundColor = .clear
     collectionView.register(AchievementListCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseID)
@@ -131,7 +131,7 @@ class AchievementsListViewController: UIViewController,
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 20
+    return 20.scaled()
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
