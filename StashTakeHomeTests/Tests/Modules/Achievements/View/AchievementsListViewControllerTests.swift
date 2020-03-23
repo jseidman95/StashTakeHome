@@ -105,16 +105,6 @@ class AchievementsListViewControllerTests: XCTestCase {
     XCTAssert(collectionViewMock.isHidden == true)
     XCTAssert(noAchievementsFoundView.isHidden == false)
   }
-//
-//  func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
-//    self.animate(cell: cell, withTransform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95), completion: {})
-//  }
-//
-//  func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//    guard let cell = collectionView.cellForItem(at: indexPath), self.achievements[safe: indexPath.item]?.unlocked == true else { return }
-//    self.animate(cell: cell, withTransform: CGAffineTransform.identity, completion: {})
-//  }
 
   func testHighlightingItemPlaysAnimationIfItemIsUnlocked() {
     let achievements = [
