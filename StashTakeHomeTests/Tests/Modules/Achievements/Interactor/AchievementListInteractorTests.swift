@@ -29,16 +29,7 @@ class AchievementListInteractorTests: XCTestCase {
 
   func testFetchAchievementsListShouldTellPresenterToShowAchievementsIfTheRequestSucceeded() {
     let string = TestHelper.randomString()
-    let achievements = (1...5).map { _ in
-      return Achievement(
-        id: Int.random(in: 1...20),
-        level: TestHelper.randomString(),
-        progress: Points.random(in: 1...20),
-        total: Points.random(in: 1...20),
-        imageURL: URL(fileURLWithPath: TestHelper.randomString()),
-        unlocked: Bool.random()
-      )
-    }
+    let achievements = (1...5).map { _ in return TestHelper.createRandomAchievement() }
     achievementListDataManagerMock.loadAchievementListReturnValue = .success((string, achievements))
 
     achievementListInteractor.fetchAchievementsList()

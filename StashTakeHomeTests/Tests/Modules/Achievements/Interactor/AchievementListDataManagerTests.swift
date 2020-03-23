@@ -110,16 +110,7 @@ class AchievementListDataManagerTests: XCTestCase {
   func testLoadAchievementListSucceedsAndReturnsParsedListResponse() {
     let expectation = XCTestExpectation(description: "load the list")
     let title = TestHelper.randomString()
-    let achievements = (0...5).map { _ in
-      Achievement(
-        id: Int.random(in: 1...20),
-        level: TestHelper.randomString(),
-        progress: Int.random(in: 1...20),
-        total: Int.random(in: 1...20),
-        imageURL: URL(fileURLWithPath: TestHelper.randomString()),
-        unlocked: Bool.random()
-      )
-    }
+    let achievements = (0...5).map { _ in TestHelper.createRandomAchievement() }
 
     let achievementListResponse = AchievementListResponse(
       status: HTTPStatus(success: true, statusCode: 0),

@@ -15,6 +15,10 @@
 		E90FA68624284EC500581093 /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68524284EC500581093 /* Global Functions.swift */; };
 		E90FA6892428503F00581093 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6882428503F00581093 /* AchievementsListPresenter.swift */; };
 		E90FA68B2428647D00581093 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68A2428647D00581093 /* UIColorExtension.swift */; };
+		E90FA68F2428728800581093 /* AchievementsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA68E2428728800581093 /* AchievementsListPresenterTests.swift */; };
+		E90FA6932428735A00581093 /* AchievementsListViewProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6922428735A00581093 /* AchievementsListViewProtocolMock.swift */; };
+		E90FA6952428741700581093 /* AchievementsListInteractorInputProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6942428741700581093 /* AchievementsListInteractorInputProtocolMock.swift */; };
+		E90FA6982428747D00581093 /* AchievementsListRouterProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FA6972428747D00581093 /* AchievementsListRouterProtocolMock.swift */; };
 		E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF02427F575009E3E8A /* AppDelegate.swift */; };
 		E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF22427F575009E3E8A /* SceneDelegate.swift */; };
 		E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAAF42427F575009E3E8A /* ViewController.swift */; };
@@ -64,6 +68,10 @@
 		E90FA68524284EC500581093 /* Global Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
 		E90FA6882428503F00581093 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
 		E90FA68A2428647D00581093 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E90FA68E2428728800581093 /* AchievementsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterTests.swift; sourceTree = "<group>"; };
+		E90FA6922428735A00581093 /* AchievementsListViewProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewProtocolMock.swift; sourceTree = "<group>"; };
+		E90FA6942428741700581093 /* AchievementsListInteractorInputProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorInputProtocolMock.swift; sourceTree = "<group>"; };
+		E90FA6972428747D00581093 /* AchievementsListRouterProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRouterProtocolMock.swift; sourceTree = "<group>"; };
 		E95AAAED2427F575009E3E8A /* StashTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95AAAF02427F575009E3E8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95AAAF22427F575009E3E8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,8 +150,8 @@
 		E90FA67A2428386A00581093 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */,
-				E9EC46FB2428369900CD6D44 /* AchievementListInteractorTests.swift */,
+				E90FA68D2428727000581093 /* Presenter */,
+				E90FA68C2428726300581093 /* Interactor */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -172,6 +180,49 @@
 				E90FA6882428503F00581093 /* AchievementsListPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E90FA68C2428726300581093 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */,
+				E9EC46FB2428369900CD6D44 /* AchievementListInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E90FA68D2428727000581093 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA68E2428728800581093 /* AchievementsListPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E90FA6902428733800581093 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC46FD242836E200CD6D44 /* AchievementListDataManagerMock.swift */,
+				E9EC46FF2428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift */,
+				E90FA6942428741700581093 /* AchievementsListInteractorInputProtocolMock.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E90FA6912428734200581093 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA6922428735A00581093 /* AchievementsListViewProtocolMock.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E90FA6962428747200581093 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA6972428747D00581093 /* AchievementsListRouterProtocolMock.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		E95AAAE42427F575009E3E8A = {
@@ -325,8 +376,9 @@
 		E9EC47022428379300CD6D44 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				E9EC46FD242836E200CD6D44 /* AchievementListDataManagerMock.swift */,
-				E9EC46FF2428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift */,
+				E90FA6962428747200581093 /* Router */,
+				E90FA6912428734200581093 /* View */,
+				E90FA6902428733800581093 /* Interactor */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -527,9 +579,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90FA6932428735A00581093 /* AchievementsListViewProtocolMock.swift in Sources */,
+				E90FA6952428741700581093 /* AchievementsListInteractorInputProtocolMock.swift in Sources */,
+				E90FA68F2428728800581093 /* AchievementsListPresenterTests.swift in Sources */,
 				E9EC46FA24282C0D00CD6D44 /* TestHelper.swift in Sources */,
 				E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */,
 				E9EC46FC2428369900CD6D44 /* AchievementListInteractorTests.swift in Sources */,
+				E90FA6982428747D00581093 /* AchievementsListRouterProtocolMock.swift in Sources */,
 				E9EC46FE242836E200CD6D44 /* AchievementListDataManagerMock.swift in Sources */,
 				E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */,
 				E9EC47002428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift in Sources */,

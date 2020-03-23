@@ -10,7 +10,19 @@ import UIKit
 @testable import StashTakeHome
 
 class TestHelper {
+  // MARK: Public Static Functions
   static func randomString() -> String {
     return UUID().uuidString
+  }
+
+  static func createRandomAchievement() -> Achievement {
+    return Achievement(
+      id: Int.random(in: 1...20),
+      level: TestHelper.randomString(),
+      progress: Int.random(in: 1...20),
+      total: Int.random(in: 1...20),
+      imageURL: URL(fileURLWithPath: TestHelper.randomString()),
+      unlocked: Bool.random()
+    )
   }
 }
