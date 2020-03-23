@@ -13,13 +13,15 @@ class AchievementsListViewControllerTests: XCTestCase {
   var achievementsListViewController: AchievementsListViewController!
   var collectionViewMock: UICollectionViewMock!
   var presenterMock: AchievementsListPresenterMock!
+  var noAchievementsFoundView: NoAchievementsFoundView!
 
   override func setUp() {
     super.setUp()
 
+    noAchievementsFoundView = NoAchievementsFoundView()
     presenterMock = AchievementsListPresenterMock()
     collectionViewMock = UICollectionViewMock()
-    achievementsListViewController = AchievementsListViewController(collectionView: collectionViewMock)
+    achievementsListViewController = AchievementsListViewController(collectionView: collectionViewMock, noAchievementsFoundView: noAchievementsFoundView)
 
     achievementsListViewController.presenter = presenterMock
   }
@@ -82,15 +84,23 @@ class AchievementsListViewControllerTests: XCTestCase {
     XCTAssert(size.height == collectionViewSize.width * 0.87 * 0.6)
   }
 
-  func testShowAchievementsReloadsTheCollectionView() {
+  func testShowAchievementsReloadsAndShowsTheCollectionView() {
     let achievements = (1...5).map { _ in TestHelper.createRandomAchievement() }
     achievementsListViewController.show(achievements: achievements)
     XCTAssert(collectionViewMock.reloadDataCallCount == 1)
+    XCTAssert(collectionViewMock.isHidden == false)
+    XCTAssert(noAchievementsFoundView.isHidden == true)
   }
 
   func testDisplayTitleChangesTheTitleOfTheViewController() {
     let string = TestHelper.randomString()
     achievementsListViewController.display(title: string)
     XCTAssert(achievementsListViewController.title == string)
+  }
+
+  func testShowNoAchievementsScreenHidesTheCollectionViewAndShowsTheNoAchievementsView() {
+    achievementsListViewController.showNoAchievementsScreen()
+    XCTAssert(collectionViewMock.isHidden == true)
+    XCTAssert(noAchievementsFoundView.isHidden == false)
   }
 }

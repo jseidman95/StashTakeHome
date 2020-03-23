@@ -22,11 +22,14 @@ class AchievementsListViewController: UIViewController,
   private let cellReuseID: String = "cellReuseID"
   private let infoButton: UIButton = .init()
   private let backButton: UIButton = .init()
+  private let noAchievementsFoundView: NoAchievementsFoundView
 
   // MARK: Public Methods
   init(
-    collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()),
+    noAchievementsFoundView: NoAchievementsFoundView = .init()
   ) {
+    self.noAchievementsFoundView = noAchievementsFoundView
     self.collectionView = collectionView
     super.init(nibName: nil, bundle: nil)
     self.setUpViews()
@@ -45,10 +48,10 @@ class AchievementsListViewController: UIViewController,
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
 
     self.navigationController?.navigationBar.isTranslucent = false
-    self.navigationController?.navigationBar.barTintColor = .stashNavigationBar
+    self.navigationController?.navigationBar.barTintColor = UIColor.stashNavigationBar
     self.navigationController?.navigationBar.titleTextAttributes = [
       .foregroundColor: UIColor.white,
-      .font: UIFont.latoRegular(ofSize: 16.scaled())
+      .font: UIFont.latoRegular(ofSize: 15.scaled())
     ]
   }
 
@@ -66,6 +69,7 @@ class AchievementsListViewController: UIViewController,
     setUpCollectionView()
     setUpInfoButton()
     setUpBackButton()
+    setUpNoAchievementsFoundView()
   }
 
   private func setUpCollectionView() {
@@ -99,6 +103,21 @@ class AchievementsListViewController: UIViewController,
     backButton.setImage(image, for: .normal)
     backButton.imageView?.contentMode = .scaleAspectFit
     backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+  }
+
+  private func setUpNoAchievementsFoundView() {
+    noAchievementsFoundView.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(noAchievementsFoundView)
+    NSLayoutConstraint.activate(
+      [
+        self.noAchievementsFoundView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+        self.noAchievementsFoundView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+        self.noAchievementsFoundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        self.noAchievementsFoundView.topAnchor.constraint(equalTo: self.view.topAnchor)
+      ]
+    )
+
+    noAchievementsFoundView.isHidden = true
   }
 
   private func animate(cell: UICollectionViewCell, withTransform transform: CGAffineTransform, completion: @escaping () -> Void) {
@@ -164,12 +183,16 @@ class AchievementsListViewController: UIViewController,
 
   // MARK: AchievementsListViewProtocol Methods
   func show(achievements: [Achievement]) {
+    self.noAchievementsFoundView.isHidden = true
+    self.collectionView.isHidden = false
+
     self.achievements = achievements
     self.collectionView.reloadData()
   }
 
   func showNoAchievementsScreen() {
-    // TODO: Maybe implement this later
+    self.noAchievementsFoundView.isHidden = false
+    self.collectionView.isHidden = true
   }
 
   func display(title: String) {

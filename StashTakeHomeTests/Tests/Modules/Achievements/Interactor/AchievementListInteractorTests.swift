@@ -27,7 +27,7 @@ class AchievementListInteractorTests: XCTestCase {
     XCTAssertTrue(achievementsListInteractorOutputProtocolMock.didFailToFetchAchievementsListCallCount == 1)
   }
 
-  func testFetchAchievementsListShouldTellPresenterToShowAchievementsIfTheRequestSucceeded() {
+  func testFetchAchievementsListShouldTellPresenterToShowAchievementsIfTheRequestSucceededWithOneOrMoreAchievement() {
     let string = TestHelper.randomString()
     let achievements = (1...5).map { _ in return TestHelper.createRandomAchievement() }
     achievementListDataManagerMock.loadAchievementListReturnValue = .success((string, achievements))
@@ -36,5 +36,14 @@ class AchievementListInteractorTests: XCTestCase {
 
     XCTAssertTrue(achievementsListInteractorOutputProtocolMock.didFetchCalls.first?.achievementsListTitle == string)
     XCTAssertTrue(achievementsListInteractorOutputProtocolMock.didFetchCalls.first?.achievementsList == achievements)
+  }
+
+  func testFetchAchievementsListShouldTellPresenterToShowNoAchievementsViewIfTheRequestSucceededWithNoAchievements() {
+    let string = TestHelper.randomString()
+    achievementListDataManagerMock.loadAchievementListReturnValue = .success((string, []))
+
+    achievementListInteractor.fetchAchievementsList()
+
+    XCTAssertTrue(achievementsListInteractorOutputProtocolMock.didFailToFetchAchievementsListCallCount == 1)
   }
 }

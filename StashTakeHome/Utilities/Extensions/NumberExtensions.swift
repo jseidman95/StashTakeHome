@@ -8,6 +8,9 @@
 
 import UIKit
 
+// I use these to scale UI that can't easily use a multiplier (like label text for example)
+// You design on the SE and multiply by this and it looks the same on other devices
+
 extension CGFloat {
   func scaled() -> CGFloat {
     return self * iphoneSEScaleFactor

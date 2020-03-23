@@ -27,6 +27,11 @@ class AchievementListInteractor: AchievementsListInteractorInputProtocol {
     self.dataManager.loadAchievementList { result in
       switch result {
       case .success((let title, let achievements)):
+        guard !achievements.isEmpty else {
+          self.presenter?.didFailToFetchAchievementsList()
+          return
+        }
+
         self.presenter?.didFetch(achievementsListTitle: title, achievementsList: achievements)
       case .failure:
         self.presenter?.didFailToFetchAchievementsList()

@@ -43,6 +43,7 @@
 		E9B6261424291C930061774B /* ProgressBarViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261324291C930061774B /* ProgressBarViewMock.swift */; };
 		E9B6261924292FDA0061774B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B6261824292FDA0061774B /* Lato-Bold.ttf */; };
 		E9B6261C2429353D0061774B /* LightStatusBarUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */; };
+		E9B6261E242972170061774B /* NoAchievementsFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6261D242972170061774B /* NoAchievementsFoundView.swift */; };
 		E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */; };
 		E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */; };
 		E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */; };
@@ -109,6 +110,7 @@
 		E9B6261324291C930061774B /* ProgressBarViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewMock.swift; sourceTree = "<group>"; };
 		E9B6261824292FDA0061774B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E9B6261B2429353D0061774B /* LightStatusBarUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStatusBarUINavigationController.swift; sourceTree = "<group>"; };
+		E9B6261D242972170061774B /* NoAchievementsFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAchievementsFoundView.swift; sourceTree = "<group>"; };
 		E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
 		E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9274C24280D8500989CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */,
 				E90FA67B2428418700581093 /* AchievementListCollectionViewCell.swift */,
 				E90FA67D2428424F00581093 /* ProgressBarView.swift */,
+				E9B6261D242972170061774B /* NoAchievementsFoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				E90FA67E2428424F00581093 /* ProgressBarView.swift in Sources */,
 				E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */,
 				E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */,
+				E9B6261E242972170061774B /* NoAchievementsFoundView.swift in Sources */,
 				E95AAB202427FF5A009E3E8A /* AchievementListDataManager.swift in Sources */,
 				E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */,
 				E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */,
