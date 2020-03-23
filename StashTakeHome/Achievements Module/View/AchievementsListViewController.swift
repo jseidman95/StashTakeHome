@@ -20,7 +20,7 @@ class AchievementsListViewController: UIViewController,
   private let collectionView: UICollectionView
   private var achievements: [Achievement] = []
   private let cellReuseID: String = "cellReuseID"
-  private let infoButton: UIButton = .init(type: .infoLight)
+  private let infoButton: UIButton = .init()
   private let backButton: UIButton = .init()
 
   // MARK: Public Methods
@@ -48,7 +48,7 @@ class AchievementsListViewController: UIViewController,
     self.navigationController?.navigationBar.barTintColor = .stashNavigationBar
     self.navigationController?.navigationBar.titleTextAttributes = [
       .foregroundColor: UIColor.white,
-      .font: UIFont.latoRegular(ofSize: 12.scaled())
+      .font: UIFont.latoRegular(ofSize: 16.scaled())
     ]
   }
 
@@ -89,8 +89,8 @@ class AchievementsListViewController: UIViewController,
 
   private func setUpInfoButton() {
     infoButton.tintColor = .white
+    infoButton.setImage(UIImage(named: "info"), for: .normal)
     infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
-    infoButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
   }
 
   private func setUpBackButton() {
