@@ -15,15 +15,20 @@ protocol AchievementsListViewProtocol: class {
   func showNoAchievementsScreen()
 }
 
-protocol AchievementsListInteractorProtocol: class {
-  var presenter: AchievementsListPresenterProtocol? { get set }
+protocol AchievementsListInteractorInputProtocol: class {
+  var presenter: AchievementsListInteractorOutputProtocol? { get set }
 
   func fetchAchievementsList()
 }
 
+protocol AchievementsListInteractorOutputProtocol: class {
+  func didFetch(achievementsListTitle: String, achievementsList: [Achievement])
+  func didFailToFetchAchievementsList()
+}
+
 protocol AchievementsListPresenterProtocol: class {
   var view: AchievementsListViewProtocol? { get set }
-  var interactor: AchievementsListInteractorProtocol? { get set }
+  var interactor: AchievementsListInteractorInputProtocol? { get set }
   var router: AchievementsListRouterProtocol? { get set }
 
   func presentAchievements()

@@ -8,5 +8,21 @@
 
 import UIKit
 
-struct Achievement {
+typealias Points = Int
+
+struct Achievement: Equatable {
+  let id: Int
+  let level: String
+  let progress: Points
+  let total: Points
+  let imageURL: URL
+  let unlocked: Bool
+}
+
+extension Achievement: Decodable {
+  private enum CodingKeys: String, CodingKey {
+    case id, level, progress, total
+    case imageURL = "bg_image_url"
+    case unlocked = "accessible"
+  }
 }

@@ -13,14 +13,26 @@
 		E95AAAF82427F575009E3E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAF62427F575009E3E8A /* Main.storyboard */; };
 		E95AAAFA2427F577009E3E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAF92427F576009E3E8A /* Assets.xcassets */; };
 		E95AAAFD2427F577009E3E8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95AAAFB2427F577009E3E8A /* LaunchScreen.storyboard */; };
-		E95AAB082427F577009E3E8A /* StashTakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */; };
 		E95AAB152427F646009E3E8A /* achievements.json in Resources */ = {isa = PBXBuildFile; fileRef = E95AAB142427F646009E3E8A /* achievements.json */; };
 		E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB172427F6AD009E3E8A /* Protocols.swift */; };
 		E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB1A2427F709009E3E8A /* Achievement.swift */; };
+		E95AAB1E2427FBA9009E3E8A /* AchievementListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB1D2427FBA9009E3E8A /* AchievementListInteractor.swift */; };
+		E95AAB202427FF5A009E3E8A /* AchievementListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */; };
+		E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB2124280563009E3E8A /* AchievementListResponse.swift */; };
+		E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB2324280780009E3E8A /* HTTPStatus.swift */; };
+		E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */; };
+		E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */; };
+		E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */; };
+		E9E92760242825CF00989CB5 /* achievements.json in Resources */ = {isa = PBXBuildFile; fileRef = E95AAB142427F646009E3E8A /* achievements.json */; };
+		E9EC46F4242827E300CD6D44 /* malformed_achievements.json in Resources */ = {isa = PBXBuildFile; fileRef = E9EC46F3242827E300CD6D44 /* malformed_achievements.json */; };
+		E9EC46FA24282C0D00CD6D44 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC46F924282C0D00CD6D44 /* TestHelper.swift */; };
+		E9EC46FC2428369900CD6D44 /* AchievementListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC46FB2428369900CD6D44 /* AchievementListInteractorTests.swift */; };
+		E9EC46FE242836E200CD6D44 /* AchievementListDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC46FD242836E200CD6D44 /* AchievementListDataManagerMock.swift */; };
+		E9EC47002428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC46FF2428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E95AAB042427F577009E3E8A /* PBXContainerItemProxy */ = {
+		E9E9274D24280D8500989CB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E95AAAE52427F575009E3E8A /* Project object */;
 			proxyType = 1;
@@ -38,12 +50,23 @@
 		E95AAAF92427F576009E3E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E95AAAFC2427F577009E3E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E95AAAFE2427F577009E3E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E95AAB032427F577009E3E8A /* StashTakeHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashTakeHomeUITests.swift; sourceTree = "<group>"; };
-		E95AAB092427F577009E3E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E95AAB142427F646009E3E8A /* achievements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = achievements.json; sourceTree = "<group>"; };
 		E95AAB172427F6AD009E3E8A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E95AAB1A2427F709009E3E8A /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		E95AAB1D2427FBA9009E3E8A /* AchievementListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListInteractor.swift; sourceTree = "<group>"; };
+		E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListDataManager.swift; sourceTree = "<group>"; };
+		E95AAB2124280563009E3E8A /* AchievementListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListResponse.swift; sourceTree = "<group>"; };
+		E95AAB2324280780009E3E8A /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
+		E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
+		E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E9274C24280D8500989CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListDataManagerTests.swift; sourceTree = "<group>"; };
+		E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderMock.swift; sourceTree = "<group>"; };
+		E9EC46F3242827E300CD6D44 /* malformed_achievements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = malformed_achievements.json; sourceTree = "<group>"; };
+		E9EC46F924282C0D00CD6D44 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		E9EC46FB2428369900CD6D44 /* AchievementListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListInteractorTests.swift; sourceTree = "<group>"; };
+		E9EC46FD242836E200CD6D44 /* AchievementListDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListDataManagerMock.swift; sourceTree = "<group>"; };
+		E9EC46FF2428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorOutputProtocolMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +77,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E95AAB002427F577009E3E8A /* Frameworks */ = {
+		E9E9274524280D8500989CB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,11 +87,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90FA6792428386400581093 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA67A2428386A00581093 /* Achievements */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E90FA67A2428386A00581093 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9275224280DD800989CB5 /* AchievementListDataManagerTests.swift */,
+				E9EC46FB2428369900CD6D44 /* AchievementListInteractorTests.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
 		E95AAAE42427F575009E3E8A = {
 			isa = PBXGroup;
 			children = (
 				E95AAAEF2427F575009E3E8A /* StashTakeHome */,
-				E95AAB062427F577009E3E8A /* StashTakeHomeUITests */,
+				E9E9274924280D8500989CB5 /* StashTakeHomeTests */,
 				E95AAAEE2427F575009E3E8A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E95AAAED2427F575009E3E8A /* StashTakeHome.app */,
-				E95AAB032427F577009E3E8A /* StashTakeHomeUITests.xctest */,
+				E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,15 +135,6 @@
 				E95AAAFE2427F577009E3E8A /* Info.plist */,
 			);
 			path = StashTakeHome;
-			sourceTree = "<group>";
-		};
-		E95AAB062427F577009E3E8A /* StashTakeHomeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E95AAB072427F577009E3E8A /* StashTakeHomeUITests.swift */,
-				E95AAB092427F577009E3E8A /* Info.plist */,
-			);
-			path = StashTakeHomeUITests;
 			sourceTree = "<group>";
 		};
 		E95AAB122427F62B009E3E8A /* Resources */ = {
@@ -127,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				E95AAB192427F6FC009E3E8A /* Entities */,
+				E9E9274124280CD900989CB5 /* View */,
+				E95AAB1C2427FB8E009E3E8A /* Interactor */,
 				E95AAB172427F6AD009E3E8A /* Protocols.swift */,
 			);
 			path = "Achievements Module";
@@ -136,8 +169,89 @@
 			isa = PBXGroup;
 			children = (
 				E95AAB1A2427F709009E3E8A /* Achievement.swift */,
+				E95AAB2124280563009E3E8A /* AchievementListResponse.swift */,
+				E95AAB2324280780009E3E8A /* HTTPStatus.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E95AAB1C2427FB8E009E3E8A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E95AAB1D2427FBA9009E3E8A /* AchievementListInteractor.swift */,
+				E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E9E9274124280CD900989CB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9274224280CE500989CB5 /* AchievementsListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9E9274924280D8500989CB5 /* StashTakeHomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC46F824282C0000CD6D44 /* Utilities */,
+				E9EC46F2242827A300CD6D44 /* Resources */,
+				E9E927592428106600989CB5 /* Tests */,
+				E9E9275424280E1900989CB5 /* Mocks */,
+				E9E9274C24280D8500989CB5 /* Info.plist */,
+			);
+			path = StashTakeHomeTests;
+			sourceTree = "<group>";
+		};
+		E9E9275424280E1900989CB5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E9E9275724280ECF00989CB5 /* JSONDecoderMock.swift */,
+				E9EC47012428377D00CD6D44 /* Modules */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E9E927592428106600989CB5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E90FA6792428386400581093 /* Modules */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E9EC46F2242827A300CD6D44 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC46F3242827E300CD6D44 /* malformed_achievements.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9EC46F824282C0000CD6D44 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC46F924282C0D00CD6D44 /* TestHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E9EC47012428377D00CD6D44 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC47022428379300CD6D44 /* Achievements */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E9EC47022428379300CD6D44 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC46FD242836E200CD6D44 /* AchievementListDataManagerMock.swift */,
+				E9EC46FF2428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift */,
+			);
+			path = Achievements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,23 +274,23 @@
 			productReference = E95AAAED2427F575009E3E8A /* StashTakeHome.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E95AAB022427F577009E3E8A /* StashTakeHomeUITests */ = {
+		E9E9274724280D8500989CB5 /* StashTakeHomeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E95AAB0F2427F577009E3E8A /* Build configuration list for PBXNativeTarget "StashTakeHomeUITests" */;
+			buildConfigurationList = E9E9274F24280D8500989CB5 /* Build configuration list for PBXNativeTarget "StashTakeHomeTests" */;
 			buildPhases = (
-				E95AAAFF2427F577009E3E8A /* Sources */,
-				E95AAB002427F577009E3E8A /* Frameworks */,
-				E95AAB012427F577009E3E8A /* Resources */,
+				E9E9274424280D8500989CB5 /* Sources */,
+				E9E9274524280D8500989CB5 /* Frameworks */,
+				E9E9274624280D8500989CB5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E95AAB052427F577009E3E8A /* PBXTargetDependency */,
+				E9E9274E24280D8500989CB5 /* PBXTargetDependency */,
 			);
-			name = StashTakeHomeUITests;
-			productName = StashTakeHomeUITests;
-			productReference = E95AAB032427F577009E3E8A /* StashTakeHomeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = StashTakeHomeTests;
+			productName = StashTakeHomeTests;
+			productReference = E9E9274824280D8500989CB5 /* StashTakeHomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -191,8 +305,9 @@
 					E95AAAEC2427F575009E3E8A = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
-					E95AAB022427F577009E3E8A = {
+					E9E9274724280D8500989CB5 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = E95AAAEC2427F575009E3E8A;
 					};
 				};
@@ -211,7 +326,7 @@
 			projectRoot = "";
 			targets = (
 				E95AAAEC2427F575009E3E8A /* StashTakeHome */,
-				E95AAB022427F577009E3E8A /* StashTakeHomeUITests */,
+				E9E9274724280D8500989CB5 /* StashTakeHomeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,10 +343,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E95AAB012427F577009E3E8A /* Resources */ = {
+		E9E9274624280D8500989CB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E92760242825CF00989CB5 /* achievements.json in Resources */,
+				E9EC46F4242827E300CD6D44 /* malformed_achievements.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,27 +361,37 @@
 			files = (
 				E95AAAF52427F575009E3E8A /* ViewController.swift in Sources */,
 				E95AAAF12427F575009E3E8A /* AppDelegate.swift in Sources */,
+				E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */,
+				E95AAB202427FF5A009E3E8A /* AchievementListDataManager.swift in Sources */,
 				E95AAAF32427F575009E3E8A /* SceneDelegate.swift in Sources */,
+				E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */,
+				E9E9274324280CE500989CB5 /* AchievementsListViewController.swift in Sources */,
 				E95AAB182427F6AD009E3E8A /* Protocols.swift in Sources */,
+				E95AAB1E2427FBA9009E3E8A /* AchievementListInteractor.swift in Sources */,
 				E95AAB1B2427F709009E3E8A /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E95AAAFF2427F577009E3E8A /* Sources */ = {
+		E9E9274424280D8500989CB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95AAB082427F577009E3E8A /* StashTakeHomeUITests.swift in Sources */,
+				E9EC46FA24282C0D00CD6D44 /* TestHelper.swift in Sources */,
+				E9E9275824280ECF00989CB5 /* JSONDecoderMock.swift in Sources */,
+				E9EC46FC2428369900CD6D44 /* AchievementListInteractorTests.swift in Sources */,
+				E9EC46FE242836E200CD6D44 /* AchievementListDataManagerMock.swift in Sources */,
+				E9E9275324280DD800989CB5 /* AchievementListDataManagerTests.swift in Sources */,
+				E9EC47002428377000CD6D44 /* AchievementsListInteractorOutputProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E95AAB052427F577009E3E8A /* PBXTargetDependency */ = {
+		E9E9274E24280D8500989CB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E95AAAEC2427F575009E3E8A /* StashTakeHome */;
-			targetProxy = E95AAB042427F577009E3E8A /* PBXContainerItemProxy */;
+			targetProxy = E9E9274D24280D8500989CB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,43 +565,46 @@
 			};
 			name = Release;
 		};
-		E95AAB102427F577009E3E8A /* Debug */ = {
+		E9E9275024280D8500989CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25U77HKX6R;
-				INFOPLIST_FILE = StashTakeHomeUITests/Info.plist;
+				INFOPLIST_FILE = StashTakeHomeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Seidman.StashTakeHomeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Seidman.StashTakeHomeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = StashTakeHome;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StashTakeHome.app/StashTakeHome";
 			};
 			name = Debug;
 		};
-		E95AAB112427F577009E3E8A /* Release */ = {
+		E9E9275124280D8500989CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25U77HKX6R;
-				INFOPLIST_FILE = StashTakeHomeUITests/Info.plist;
+				INFOPLIST_FILE = StashTakeHomeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Seidman.StashTakeHomeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Seidman.StashTakeHomeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = StashTakeHome;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StashTakeHome.app/StashTakeHome";
 			};
 			name = Release;
 		};
@@ -499,11 +629,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E95AAB0F2427F577009E3E8A /* Build configuration list for PBXNativeTarget "StashTakeHomeUITests" */ = {
+		E9E9274F24280D8500989CB5 /* Build configuration list for PBXNativeTarget "StashTakeHomeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E95AAB102427F577009E3E8A /* Debug */,
-				E95AAB112427F577009E3E8A /* Release */,
+				E9E9275024280D8500989CB5 /* Debug */,
+				E9E9275124280D8500989CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
