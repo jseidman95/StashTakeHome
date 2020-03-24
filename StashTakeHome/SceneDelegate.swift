@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
 
-    let achievementListView = AchievementsListViewRouter()
-    let module = achievementListView.createAchievementListModule()
+    let achievementListViewRouter = AchievementsListViewRouter()
+    let module = achievementListViewRouter.createAchievementListModule()
 
     window = UIWindow(windowScene: windowScene)
     window?.rootViewController = module
