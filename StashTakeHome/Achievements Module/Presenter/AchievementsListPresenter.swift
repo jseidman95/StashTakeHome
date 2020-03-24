@@ -10,7 +10,7 @@ import UIKit
 
 class AchievementsListPresenter: AchievementsListPresenterProtocol, AchievementsListInteractorOutputProtocol {
   // MARK: AchievementsListPresenterProtocol Properties
-  var view: AchievementsListViewProtocol?
+  weak var view: AchievementsListViewProtocol?
   var interactor: AchievementsListInteractorInputProtocol?
   var router: AchievementsListRouterProtocol?
 

@@ -10,23 +10,28 @@ import UIKit
 
 class AchievementsListViewRouter: AchievementsListRouterProtocol {
   // MARK: AchievementsListRouterProtocol Properties
-  var presenter: AchievementsListPresenterProtocol?
+  weak var presenter: AchievementsListPresenterProtocol?
+
+  // MARK: Private Properties
+  private weak var viewController: UIViewController?
 
   // MARK: AchievementsListRouterProtocol Methods
-  static func createAchievementListModule() -> UIViewController {
+  func createAchievementListModule() -> UIViewController {
     let viewController = AchievementsListViewController()
     let presenter: AchievementsListPresenterProtocol & AchievementsListInteractorOutputProtocol = AchievementsListPresenter()
     let interactor = AchievementListInteractor()
 
     presenter.view = viewController
     presenter.interactor = interactor
-    presenter.router = AchievementsListViewRouter()
+    presenter.router = self
     interactor.presenter = presenter
     viewController.presenter = presenter
 
     let rootViewController = UIViewController()
     let navController = LightStatusBarUINavigationController(rootViewController: rootViewController)
     navController.pushViewController(viewController, animated: false)
+
+    self.viewController = navController
 
     return navController
   }

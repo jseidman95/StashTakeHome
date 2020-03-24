@@ -41,7 +41,7 @@ protocol AchievementsListPresenterProtocol: class {
 protocol AchievementsListRouterProtocol: class {
   var presenter: AchievementsListPresenterProtocol? { get set }
 
-  static func createAchievementListModule() -> UIViewController
+  func createAchievementListModule() -> UIViewController
   func presentInfoScreen()
   func dismissAchievementScreen()
   func presentAchievementDetail(for achievement: Achievement)

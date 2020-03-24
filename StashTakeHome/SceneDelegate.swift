@@ -16,10 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
 
-    let achievementListView = AchievementsListViewRouter.createAchievementListModule()
+    let achievementListView = AchievementsListViewRouter()
+    let module = achievementListView.createAchievementListModule()
 
     window = UIWindow(windowScene: windowScene)
-    window?.rootViewController = achievementListView
+    window?.rootViewController = module
     window?.makeKeyAndVisible()
   }
 

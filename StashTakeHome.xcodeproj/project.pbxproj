@@ -36,6 +36,7 @@
 		E95AAB202427FF5A009E3E8A /* AchievementListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */; };
 		E95AAB2224280563009E3E8A /* AchievementListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB2124280563009E3E8A /* AchievementListResponse.swift */; };
 		E95AAB2424280780009E3E8A /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AAB2324280780009E3E8A /* HTTPStatus.swift */; };
+		E968A257242980E800CDD58E /* AchievementsListViewRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968A256242980E800CDD58E /* AchievementsListViewRouterTests.swift */; };
 		E9B626092429140C0061774B /* AchievementsListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B626082429140C0061774B /* AchievementsListPresenterMock.swift */; };
 		E9B6260C242917B60061774B /* AchievementListCollectionViewCellMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260B242917B60061774B /* AchievementListCollectionViewCellMock.swift */; };
 		E9B6260E24291BB10061774B /* AchievementListCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */; };
@@ -105,6 +106,7 @@
 		E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListDataManager.swift; sourceTree = "<group>"; };
 		E95AAB2124280563009E3E8A /* AchievementListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListResponse.swift; sourceTree = "<group>"; };
 		E95AAB2324280780009E3E8A /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
+		E968A256242980E800CDD58E /* AchievementsListViewRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewRouterTests.swift; sourceTree = "<group>"; };
 		E9B626082429140C0061774B /* AchievementsListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterMock.swift; sourceTree = "<group>"; };
 		E9B6260B242917B60061774B /* AchievementListCollectionViewCellMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCollectionViewCellMock.swift; sourceTree = "<group>"; };
 		E9B6260D24291BB10061774B /* AchievementListCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCollectionViewCellTests.swift; sourceTree = "<group>"; };
@@ -179,8 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				E90FA6AE24290C9C00581093 /* View */,
-				E90FA68D2428727000581093 /* Presenter */,
 				E90FA68C2428726300581093 /* Interactor */,
+				E90FA68D2428727000581093 /* Presenter */,
+				E968A255242980C600CDD58E /* Router */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -356,6 +359,14 @@
 				E95AAB1F2427FF5A009E3E8A /* AchievementListDataManager.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E968A255242980C600CDD58E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E968A256242980E800CDD58E /* AchievementsListViewRouterTests.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		E9B62607242913F70061774B /* Presenter */ = {
@@ -677,6 +688,7 @@
 			files = (
 				E9B6260C242917B60061774B /* AchievementListCollectionViewCellMock.swift in Sources */,
 				E90FA6932428735A00581093 /* AchievementsListViewProtocolMock.swift in Sources */,
+				E968A257242980E800CDD58E /* AchievementsListViewRouterTests.swift in Sources */,
 				E90FA6952428741700581093 /* AchievementsListInteractorInputProtocolMock.swift in Sources */,
 				E90FA68F2428728800581093 /* AchievementsListPresenterTests.swift in Sources */,
 				E9B626092429140C0061774B /* AchievementsListPresenterMock.swift in Sources */,

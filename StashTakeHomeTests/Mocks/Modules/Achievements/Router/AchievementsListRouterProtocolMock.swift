@@ -23,7 +23,7 @@ class AchievementsListRouterProtocolMock: AchievementsListRouterProtocol {
     presentInfoScreenCallCount += 1
   }
 
-  static func createAchievementListModule() -> UIViewController {
+  func createAchievementListModule() -> UIViewController {
     return UIViewController()
   }
 
