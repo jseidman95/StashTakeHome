@@ -17,4 +17,13 @@ extension UIColor {
       alpha: 1.0
     )
   }
+
+  static var progressBarFillColor: UIColor {
+    return UIColor(
+      red: 113 / 255.0,
+      green: 202 / 255.0,
+      blue: 92 / 255.0,
+      alpha: 1.0
+    )
+  }
 }
